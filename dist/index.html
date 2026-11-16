@@ -28,18 +28,8 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 #glow{position:absolute;left:0;right:0;top:0;height:42%;background:linear-gradient(rgba(244,241,234,.1),rgba(244,241,234,0))}
 #cross{position:absolute;left:32px;right:32px;top:37.5%;height:1px;background:var(--line)}
 #cross i{position:absolute;left:50%;top:-.62em;margin-left:-.3em;font:400 13px 'IBM Plex Mono',monospace;color:var(--mid);background:var(--bg);padding:0 .3em;line-height:1.2}
-.bot{position:absolute;left:32px;right:32px;bottom:26px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;font-size:12.5px;line-height:1.35;pointer-events:none}
-.bot p{color:var(--ink);max-width:21em}
-.bot .mid{font:400 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em}
-.bot .mid s{text-decoration:none;color:var(--mid);margin:0 .9em}
-.bot .r{justify-self:end;display:flex;gap:12px;align-items:center;font:400 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em}
-.bot .r:after{content:"";width:22px;height:1px;background:var(--ink)}
 #rule{position:absolute;left:3.5vw;right:3.5vw;top:50%;height:1px;background:var(--line);transform-origin:left;transform:scaleX(0)}
 #name{position:absolute;left:0;top:0;padding:6px 11px;background:var(--ink);color:var(--bg);border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.04em;pointer-events:none;opacity:0;transition:opacity .16s;white-space:nowrap}
-@media (max-width:760px){
-  .bot{left:18px;right:18px;bottom:18px;grid-template-columns:1fr auto}.bot .mid{display:none}
-  .bot p{max-width:17em;font-size:11px}
-}
 </style>
 <style>
 @font-face {
@@ -91,11 +81,10 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .orv-button { display:inline-flex; align-items:center; justify-content:space-between; gap:calc(12 * var(--u)); min-height:calc(46 * var(--u)); padding:0 calc(17 * var(--u)); border-radius:calc(3 * var(--u)); background:#111; color:#fff!important; font-size:max(10px,calc(13 * var(--u))); font-weight:550; transition:translate .2s }
 .orv-button:hover { translate:0 -1px }
 .orv-contact { top:calc(63 * var(--u)); right:var(--edge); min-width:calc(144 * var(--u)) }
-.orv-title { left:var(--edge); top:calc(246 * var(--u)); font-family:Archivo,sans-serif; font-weight:640; font-stretch:104%; font-size:calc(90 * var(--u)); line-height:.86; letter-spacing:-.06em }
+.orv-title { left:var(--edge); top:calc(246 * var(--u)); font-family:Archivo,sans-serif; font-weight:640; font-stretch:100%; font-size:calc(77 * var(--u)); line-height:.86; letter-spacing:-.06em }
 .orv-title > span { display:block; overflow:hidden; padding-right:.08em; padding-bottom:.055em }
 .orv-title b { display:block; font:inherit }
-.orv-title sup { position:absolute; top:calc(26 * var(--u)); left:calc(282 * var(--u)); letter-spacing:0; font-size:calc(16 * var(--u)); white-space:nowrap }
-.orv-about { top:calc(458 * var(--u)); left:var(--edge); width:calc(230 * var(--u)); font-size:max(10px,calc(14 * var(--u))); line-height:1.2 }
+.orv-about { top:calc(458 * var(--u)); left:var(--edge); width:calc(287 * var(--u)); font-size:max(10px,calc(14 * var(--u))); line-height:1.2 }
 .orv-about small { font-size:.9em; font-weight:600 }
 .orv-about p { margin:calc(14 * var(--u)) 0 calc(24 * var(--u)) }
 .orv-growth { top:calc(258 * var(--u)); right:calc(80 * var(--u)); display:flex; align-items:center; gap:calc(7 * var(--u)); padding:calc(5 * var(--u)) calc(9 * var(--u)) calc(5 * var(--u)) calc(5 * var(--u)); border-radius:50px; background:#ffffff65; backdrop-filter:blur(9px); font-size:max(10px,calc(13 * var(--u))); font-weight:600 }
@@ -103,39 +92,40 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .orv-available { right:var(--edge); top:calc(442 * var(--u)); text-align:right; font-size:max(10px,calc(13 * var(--u))); line-height:1.2 }
 .orv-logos { top:calc(855 * var(--u)); left:50%; translate:-50% 0; width:calc(460 * var(--u)); display:flex; justify-content:space-between; color:white; font-size:max(10px,calc(17 * var(--u))); font-weight:650; text-shadow:0 1px 4px #000 }
 .orv-mini { top:calc(693 * var(--u)); left:var(--edge); width:calc(341 * var(--u)); height:calc(208 * var(--u)); padding:calc(8 * var(--u)); display:grid; grid-template-columns:1fr 1fr; gap:calc(8 * var(--u)); background:#cdcdcd }
-.orv-mini article { position:relative; display:flex; flex-direction:column; overflow:hidden; padding:calc(12 * var(--u)); background:#151515; color:#f4f4f4; font-size:max(8px,calc(10 * var(--u))); line-height:1.15 }
-.orv-mini strong { display:block; font-size:max(16px,calc(27 * var(--u))); font-weight:600; letter-spacing:-.04em }
-.orv-mini article:first-child { gap:calc(4 * var(--u)) }
-.orv-marks { display:grid; grid-template-columns:1fr 1fr; gap:calc(7 * var(--u)) 3px; margin:auto 0; color:#bfbfbf; font-size:max(7px,calc(9.5 * var(--u))) }
-.orv-mini a { display:flex; justify-content:space-between; background:#f4f4f4; color:#111; padding:calc(6 * var(--u)); font-weight:600 }
-.orv-mini .orv-feed { justify-content:space-between; background:#111 linear-gradient(0deg,#000b,transparent 75%) }
-.orv-feed img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2 }
-.orv-feed { isolation:isolate }
-.orv-feed:before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(0deg,#000b,transparent 70%,#0008) }
-.orv-feed small { padding-bottom:calc(7 * var(--u)); border-bottom:1px solid #ffffff48 }
-.orv-feed p { text-align:right }
-.orv-feature { right:var(--edge); top:calc(665 * var(--u)); width:calc(346 * var(--u)); font-size:max(10px,calc(13 * var(--u))); line-height:1.15 }
-.orv-feature figcaption { display:flex; justify-content:space-between; align-items:end; margin-bottom:calc(9 * var(--u)) }
+.orv-mini .orv-channel { display:grid; grid-template-rows:minmax(0,1fr) auto auto auto; min-width:0; row-gap:calc(4 * var(--u)); padding:calc(12 * var(--u)); background:#151515; color:#f4f4f4; font-size:max(8px,calc(11 * var(--u))); line-height:1.15; transition:background .2s }
+.orv-mini .orv-channel:hover { background:#272727 }
+.orv-channel-art { position:relative; min-height:0; overflow:hidden; margin-bottom:calc(4 * var(--u)) }
+.orv-channel-art img { position:absolute; left:50%; display:block; height:auto; max-width:none }
+.orv-channel-portrait { mask-image:linear-gradient(#000 78%,transparent) }
+.orv-channel-portrait img { top:0; width:min(165%,calc(205 * var(--u))); transform:translate(-52.8%,-6%) }
+.orv-channel-logo img { top:50%; width:min(175%,calc(180 * var(--u))); transform:translate(-50%,-38.8%); filter:url(#the-lead-orange-mark) }
+.orv-channel strong { min-block-size:2.2em; font-size:max(10px,calc(15 * var(--u))); font-weight:650; line-height:1.1 }
+.orv-channel small { color:#c5c5c5; font-size:inherit; overflow-wrap:anywhere }
+.orv-channel em { font-style:normal; color:#d2d2d2 }
+.orv-feature { right:var(--edge); top:calc(638 * var(--u)); width:calc(346 * var(--u)); font-size:max(10px,calc(13 * var(--u))); line-height:1.15 }
+.orv-feature figcaption { display:flex; justify-content:space-between; align-items:end; margin-bottom:calc(9 * var(--u)); gap:calc(8 * var(--u)) }
+.orv-feature figcaption strong { display:block; margin:calc(3 * var(--u)) 0; font-size:max(13px,calc(19 * var(--u))) }
 .orv-feature figcaption small { display:block; color:#424242 }
-.orv-feature em { background:#111; color:white; font:inherit; border-radius:30px; padding:calc(4 * var(--u)) calc(7 * var(--u)) }
-.orv-feature a { display:block; position:relative; height:calc(196 * var(--u)); background:#888; overflow:hidden; border-radius:calc(4 * var(--u)) }
-.orv-feature img { width:100%; height:100%; object-fit:cover; object-position:62% 45%; scale:1.55; transition:scale .4s }
-.orv-feature a:hover img { scale:1.67 }
-.orv-feature a span { position:absolute; left:50%; top:50%; translate:-50% -50%; display:grid; place-items:center; width:calc(65 * var(--u)); aspect-ratio:1; border-radius:50%; background:#ffffff52; color:white; backdrop-filter:blur(8px); font-size:calc(28 * var(--u)); transition:rotate .25s }
-.orv-feature a:hover span { rotate:45deg }
-.orv-feature a i { position:absolute; inset:auto 5% 10% 5%; height:1px; background:#ffffff59 }
-.orv-feature a i:before { content:""; display:block; width:40%; height:100%; background:white; transform-origin:left; animation:orv-line 1.25s ease-out both }
-@keyframes orv-line { from{scale:0 1} to{scale:1 1} }
+.orv-feature .orv-feature-handle { align-self:start; white-space:nowrap; background:#111; color:white; border-radius:30px; padding:calc(4 * var(--u)) calc(7 * var(--u)) }
+.orv-feature-cover { display:block; position:relative; height:calc(196 * var(--u)); background:#888; overflow:hidden; border-radius:calc(4 * var(--u)) }
+.orv-feature img { width:100%; height:100%; object-fit:cover; object-position:center 30%; transition:scale .4s }
+.orv-feature-cover:hover img { scale:1.06 }
+.orv-feature-cover span { position:absolute; right:calc(12 * var(--u)); bottom:calc(12 * var(--u)); display:grid; place-items:center; width:calc(65 * var(--u)); aspect-ratio:1; border-radius:50%; background:#12121285; color:white; backdrop-filter:blur(8px); font-size:calc(28 * var(--u)); transition:rotate .25s }
+.orv-feature-cover:hover span { rotate:45deg }
 .orv-end { background:#000; color:#f4f4f4; padding-bottom:calc(150 * var(--u)) }
 .orv-bar { height:calc(111 * var(--u)); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 var(--edge); border-bottom:1px solid #ffffff24; font:600 max(9px,calc(14 * var(--u))) Archivo,sans-serif; font-stretch:115%; letter-spacing:.035em }
 .orv-bar > :last-child { text-align:right; color:#999 }
 .orv-bar b { color:#999;font-weight:inherit }
 .orv-bar a { display:flex; align-items:center; gap:calc(8 * var(--u)) }
 .orv-bar i { display:grid; place-items:center; width:max(16px,calc(22 * var(--u))); aspect-ratio:1; border-radius:100%; color:#111; background:white; font-style:normal }
-.orv-statement { text-align:center; padding:calc(170 * var(--u)) var(--edge) calc(230 * var(--u)) }
-.orv-statement h2 { max-width:calc(830 * var(--u)); margin:auto; font-size:calc(52 * var(--u)); line-height:1.33; letter-spacing:-.028em; font-weight:400; text-wrap:balance }
-.orv-statement p { margin:calc(150 * var(--u)) auto 0; font-size:calc(23 * var(--u)); line-height:1.35 }
-.orv-statement p em { color:#888 }
+.orv-about-me { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); align-items:center; gap:clamp(32px,6vw,106px); width:min(calc(100% - 2 * var(--edge)),1280px); margin-inline:auto; padding-block:clamp(52px,8vw,135px) }
+.orv-about-photo { position:relative; aspect-ratio:1 / 1.12; overflow:hidden; background:radial-gradient(ellipse 46% 47% at 53% 44%,#392a1f 0%,#291e16 36%,#130e0b 66%,transparent 100%); mask-image:linear-gradient(#000 91%,transparent) }
+.orv-about-photo img { position:absolute; top:-6%; left:50%; display:block; width:115%; height:auto; transform:translateX(-52.8%) }
+.orv-about-bio { max-width:570px }
+.orv-about-kicker { margin-bottom:18px; color:#adadad; font:500 11px 'IBM Plex Mono',monospace; letter-spacing:.14em }
+.orv-about-bio h2 { font-size:clamp(34px,4.15vw,68px); font-weight:500; line-height:1.1; letter-spacing:-.045em; word-spacing:.08em; text-wrap:balance }
+.orv-about-role { margin:12px 0 28px; font-size:clamp(15px,1.6vw,23px); color:#e2e2e2 }
+.orv-about-bio p:not([class]) { margin-top:15px; max-width:49ch; font-size:clamp(16px,1.48vw,21px); line-height:1.6; color:#bdbdbd }
 .orv-trust { position:relative; display:grid; grid-template-columns:1.55fr 1fr 1.02fr .59fr; align-items:center; gap:calc(17 * var(--u)); width:min(90.42%,1736px); min-height:calc(429 * var(--u)); margin:auto; padding:calc(49 * var(--u)); padding-right:0; overflow:hidden; border:1px solid #ffffff47; border-radius:calc(14 * var(--u)) }
 .orv-trust-copy { position:relative; align-self:center; padding-right:calc(16 * var(--u)) }
 .orv-trust h2 { font-size:calc(55 * var(--u)); line-height:1; letter-spacing:-.055em; font-weight:500 }
@@ -166,8 +156,7 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
  .orv-nav a{min-width:0;padding-inline:calc(12 * var(--u))}
  .orv-contact{grid-area:1/2;display:grid;place-items:center;justify-content:center;width:calc(40 * var(--u));min-width:0;min-height:calc(40 * var(--u));padding:0;font-size:calc(16 * var(--u))}
  .orv-contact span:first-child,.orv-date,.orv-available{display:none}
- .orv-title{grid-area:2/1/3/3;font-size:calc(67 * var(--u));margin-top:calc(17 * var(--u))}
- .orv-title sup{top:calc(10 * var(--u));left:calc(206 * var(--u))}
+ .orv-title{grid-area:2/1/3/3;font-size:clamp(40px,calc(57 * var(--u)),74px);margin-top:calc(17 * var(--u))}
  .orv-about{grid-area:3/1/4/3;width:calc(235 * var(--u));font-size:calc(14 * var(--u))}
  .orv-about p{margin:calc(8 * var(--u)) 0 calc(12 * var(--u))}
  .orv-photo{grid-area:4/1/5/3;width:calc(100% + 2 * var(--edge));margin-inline:calc(-1 * var(--edge));height:calc(470 * var(--u));overflow:hidden}
@@ -177,10 +166,9 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
  .orv-mini{grid-area:6/1/7/3;width:100%;height:calc(196 * var(--u))}
  .orv-feature{grid-area:7/1/8/3;width:100%}
  .orv-bar{height:calc(63 * var(--u))}
- .orv-statement{padding:calc(87 * var(--u)) var(--edge) calc(104 * var(--u))}
- .orv-statement h2{font-size:calc(28 * var(--u))}
- .orv-desktop-break{display:none}
- .orv-statement p{margin-top:calc(58 * var(--u));font-size:calc(15 * var(--u))}
+ .orv-about-me{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:34px 64px}
+ .orv-about-photo{width:min(100%,360px);justify-self:center}
+ .orv-about-role{margin-bottom:20px}
  .orv-trust{grid-template-columns:minmax(0,1fr);gap:calc(10 * var(--u));padding:calc(18 * var(--u));width:calc(100% - 2 * var(--edge));overflow:visible}
  .orv-trust-copy{grid-column:1/-1;padding-bottom:calc(15 * var(--u))}
  .orv-trust h2{font-size:calc(42 * var(--u))}
@@ -202,25 +190,41 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 <section class="orv orv-hero" id="home" aria-labelledby="orv-title">
  <div class="orv-artboard">
   <div class="orv-photo"><img src="./images/nguyen-dinh-duc-portrait.png" alt="Nguyễn Đình Đức cầm máy ảnh" width="1086" height="1448" fetchpriority="high"></div>
-  <nav class="orv-nav" aria-label="Page sections"><i aria-hidden="true"></i><a href="#home">Home</a><a href="#statement">Studio</a><a href="#portfolio">Works</a><a href="#highlights">Highlights</a></nav>
-  <p class="orv-date">ORVANTE CONCEPT<br>STUDIO EDITION / 2026</p>
+  <nav class="orv-nav" aria-label="Page sections"><i aria-hidden="true"></i><a href="#home">Home</a><a href="#statement">About Me</a><a href="#portfolio">Services</a><a href="#highlights">Contact</a></nav>
+  <p class="orv-date" lang="vi">NGUYỄN ĐÌNH ĐỨC<br>PORTFOLIO · ĐÀ NẴNG</p>
   <a class="orv-button orv-contact" href="#portfolio" aria-label="View portfolio"><span>View Portfolio</span><span aria-hidden="true">↗</span></a>
-  <h1 class="orv-title" id="orv-title" aria-label="Pure Design"><span><b>PURE</b></span><span><b>DESIGN</b></span><sup aria-hidden="true">(’25)</sup></h1>
-  <div class="orv-about"><small>● (ABOUT)</small><p>Building stunning websites for brands that deserve to be seen.</p><a class="orv-button" href="#portfolio">Explore Work <span aria-hidden="true">↗</span></a></div>
+  <h1 class="orv-title" id="orv-title" aria-label="Content Creator"><span><b>CONTENT</b></span><span><b>CREATOR</b></span></h1>
+  <div class="orv-about"><small>● (ABOUT)</small><p lang="vi">Tôi làm nội dung TikTok cho kênh cá nhân và tham gia sản xuất video cho các kênh doanh nghiệp, từ lên ý tưởng đến quay và chỉnh sửa.</p><a class="orv-button" href="#portfolio">Explore Work <span aria-hidden="true">↗</span></a></div>
   <div class="orv-growth"><i aria-hidden="true">✓</i> True Growth</div>
   <p class="orv-available">We’re available<br>● for you</p>
   <div class="orv-logos" aria-label="Fictional partner names"><span>Lumon</span><span>Paperfold</span><span>Northwind</span></div>
-  <div class="orv-mini">
-   <article><p><strong data-count="400">400+</strong>Trusted Partner</p><div class="orv-marks"><span>◈ Halcyon</span><span>◒ Ostra</span><span>◇ Fenwick</span><span>✣ Monolo</span><span>⟐ Kitefly</span><span>⌁ Arbor</span></div><a href="#highlights">Studio Highlights <span aria-hidden="true">↗</span></a></article>
-   <article class="orv-feed"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/a9d3641f-d629-46e5-8d2d-5f75386b803d.webp" alt=""><small>Studio Feed · 05/06</small><p><strong data-count="230">230+</strong>Projects launched worldwide</p></article>
+  <div class="orv-mini" lang="vi" aria-label="Kênh TikTok">
+   <a class="orv-channel" href="https://www.tiktok.com/@duc_ctpmq" target="_blank" rel="noopener noreferrer">
+    <span class="orv-channel-art orv-channel-portrait"><img src="./images/nguyen-dinh-duc-portrait.png" alt="" width="1086" height="1448"></span>
+    <strong>Đức Nè!</strong><small>@duc_ctpmq</small>
+    <em>Kênh cá nhân</em>
+   </a>
+   <a class="orv-channel" href="https://www.tiktok.com/@thelead.office" target="_blank" rel="noopener noreferrer">
+    <span class="orv-channel-art orv-channel-logo"><img src="./images/the-lead-agency-logo.jpg" alt="" width="2048" height="2048"></span>
+    <strong>Chuyện Nhà The Lead</strong><small>@thelead.office</small>
+    <em>Kênh doanh nghiệp</em>
+   </a>
+   <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+    <filter id="the-lead-orange-mark" color-interpolation-filters="sRGB">
+     <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  3 0 -3 0 0"/>
+    </filter>
+   </svg>
   </div>
-  <figure class="orv-feature"><figcaption><div><small>Out Now</small>Q Industrial</div><em>[2025]</em></figcaption><a href="#portfolio" aria-label="Explore selected work"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/9340eb08-877d-4d08-91fb-b70754541d98.webp" alt="Abstract monochrome fashion study"><span aria-hidden="true">↗</span><i aria-hidden="true"></i></a></figure>
+  <figure class="orv-feature" lang="vi">
+   <figcaption><div><small>Dự án nổi bật</small><strong>ODAY.STAY</strong><small>Video ngắn về những tình huống tại khách sạn</small></div><a class="orv-feature-handle" href="https://www.tiktok.com/@odau.oday" target="_blank" rel="noopener noreferrer">@odau.oday</a></figcaption>
+   <a class="orv-feature-cover" href="#portfolio" aria-label="Xem video trong portfolio"><img src="./images/oday-stay-tiktok.jpg" alt="Bảng hiệu ODAY.STAY tại Đà Nẵng"><span aria-hidden="true">↗</span></a>
+  </figure>
  </div>
 </section>
 <section id="track" aria-label="Nguyễn Đình Đức video portfolio">
   <span id="portfolio" aria-hidden="true"></span>
   <div class="stage" id="stage">
-    <h2 lang="vi" aria-label="Nguyễn Đình Đức, Marketing">
+    <h2 id="portfolio-heading" lang="vi" aria-label="Nguyễn Đình Đức, Marketing">
       <div class="hl" id="l1" aria-hidden="true"><span>NGUYỄN ĐÌNH ĐỨC</span></div>
       <div class="hl" id="l2" aria-hidden="true"><span>MARKETING</span></div>
     </h2>
@@ -229,19 +233,22 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     <div id="cross"><i>+</i></div>
     <div id="rule"></div>
     <canvas id="gl"></canvas>
-    <footer class="bot">
-      <p>Concepts, explorations and interface experiments shared openly as part of our creative process.</p>
-      <div class="mid">VISUALS<s>/</s>FILM<s>/</s>MUSIC<s>/</s>EXPERIMENTS</div>
-      <div class="r">VIEW SHOWREEL</div>
-    </footer>
     <div id="name"></div>
   </div>
 </section>
 <section class="orv orv-end" aria-label="Orvante studio">
  <div class="orv-bar"><span>EST <b>2019</b></span><a href="#statement">SCROLL DOWN <i aria-hidden="true">↓</i></a><span>LIVE IN DETAILS</span></div>
- <section class="orv-statement" id="statement" aria-label="Studio statement">
-  <h2 aria-label="We believe the strongest brands are built through strategy, not just aesthetics. Every campaign is designed to capture attention, inspire action, and create lasting business growth."><span aria-hidden="true">We</span> <span aria-hidden="true">believe</span> <span aria-hidden="true">the</span> <span aria-hidden="true">strongest</span> <span aria-hidden="true">brands</span> <span aria-hidden="true">are</span><br class="orv-desktop-break"> <span aria-hidden="true">built</span> <span aria-hidden="true">through</span> <span aria-hidden="true">strategy,</span> <span aria-hidden="true">not</span> <span aria-hidden="true">just</span><br class="orv-desktop-break"> <span aria-hidden="true">aesthetics.</span> <span aria-hidden="true">Every</span> <span aria-hidden="true">campaign</span> <span aria-hidden="true">is</span> <span aria-hidden="true">designed</span><br class="orv-desktop-break"> <span aria-hidden="true">to</span> <span aria-hidden="true">capture</span> <span aria-hidden="true">attention,</span> <span aria-hidden="true">inspire</span> <span aria-hidden="true">action,</span> <span aria-hidden="true">and</span><br class="orv-desktop-break"> <span aria-hidden="true">create</span> <span aria-hidden="true">lasting</span> <span aria-hidden="true">business</span> <span aria-hidden="true">growth.</span></h2>
-  <p>Performance-driven marketing, from<br> strategy to execution. <em>Built for growing brands.</em></p>
+ <section class="orv-about-me" id="statement" aria-labelledby="about-me-name" lang="vi">
+  <figure class="orv-about-photo">
+   <img src="./images/nguyen-dinh-duc-about.png" width="1086" height="1448" alt="Nguyễn Đình Đức cầm máy ảnh" loading="lazy" decoding="async">
+  </figure>
+  <div class="orv-about-bio">
+   <p class="orv-about-kicker" lang="en">ABOUT ME</p>
+   <h2 id="about-me-name">Nguyễn Đình Đức</h2>
+   <p class="orv-about-role" lang="en">Content Marketing · Social Media</p>
+   <p>Tôi học Marketing tại Đại học Duy Tân và quan tâm đến cách kể chuyện trên mạng xã hội, từ ý tưởng ban đầu đến khung hình cuối cùng.</p>
+   <p>Trong thời gian thực tập tại The Lead Agency và ByKod Project, tôi tham gia lên kế hoạch nội dung, quay dựng video và hỗ trợ triển khai truyền thông cho các thương hiệu.</p>
+  </div>
  </section>
  <section class="orv-trust" id="highlights" aria-labelledby="orv-trust-title">
   <div class="orv-trust-copy"><h2 id="orv-trust-title">Trusted by<br>Hundreds of<br>Growing<br>Businesses</h2><span class="orv-tile" aria-hidden="true">✳</span><span class="orv-tile" aria-hidden="true">⠿</span><p>From early-stage teams to growing brands, we build identities and campaigns with a clear point of view.</p></div>
@@ -259,8 +266,6 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
   const navLinks = [...nav.querySelectorAll('a')];
   const pill = nav.querySelector('i');
   const photo = hero.querySelector('.orv-photo img');
-  const statement = document.querySelector('.orv-statement h2');
-  const words = [...statement.querySelectorAll('span')];
   const trust = document.querySelector('.orv-trust');
   const avatars = [...trust.querySelectorAll('.orv-avatars img')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -282,20 +287,12 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     if (!nav.contains(event.relatedTarget)) movePill(navLinks[0]);
   });
 
-  function fillStatement(progress) {
-    words.forEach((word, index) => {
-      const color = Math.round(111 + 133 * limit((progress * (words.length + 2) - index) / 3));
-      word.style.color = 'rgb(' + color + ' ' + color + ' ' + color + ')';
-    });
-  }
   let frame = 0;
   function update() {
     frame = 0;
     if (reduced || recorder) return;
     const top = hero.getBoundingClientRect().top;
     if (top >= -hero.offsetHeight) photo.style.translate = '0 ' + Math.max(0, -top * .12) + 'px';
-    const rect = statement.getBoundingClientRect();
-    fillStatement(limit((innerHeight * .84 - rect.top) / (rect.height + innerHeight * .28)));
   }
   function queueUpdate() {
     if (!frame) frame = requestAnimationFrame(update);
@@ -339,13 +336,11 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     element.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],
       {duration:690,delay:190+index*55,easing,fill:'backwards'});
   });
-  hero.querySelectorAll('[data-count]').forEach(element => animateCount(element));
 
   if (recorder) {
     const start = performance.now();
     function record(now) {
       const elapsed = now - start;
-      fillStatement(limit((elapsed - 1300) / 2900));
       photo.style.translate = '0 ' + 40 * limit(elapsed / 5500) + 'px';
       if (elapsed < 5500) requestAnimationFrame(record);
     }
@@ -517,6 +512,7 @@ function render() {
   const run = mix(-50, 76, span(pp, 0, .58));
   $('l1').style.transform = `translate3d(${run}vw,${rise * 34}vh,0)`;
   $('l2').style.transform = `translate3d(${-run}vw,${rise * 34}vh,0)`;
+  $('portfolio-heading').style.opacity = 1 - ease(span(pp, .44, .57));
   const capA = 1 - span(pp, .52, .57);
   $('cap').style.opacity = capA; $('cap').style.transform = `translate(-50%,calc(-50% + ${rise * 34}vh))`;
   const intro = 1 - span(pp, 0, .05);
