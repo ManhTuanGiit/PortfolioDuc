@@ -141,33 +141,20 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .experience, .portfolio-quote { width:min(90.42%,1736px); margin-inline:auto }
 .experience { padding-block:clamp(46px,6vw,110px) 0 }
 .experience > h2 { margin-bottom:clamp(22px,3.4vw,58px); font-size:clamp(38px,6vw,100px); font-weight:500; line-height:1.04; letter-spacing:-.055em }
-.experience-row { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.55fr) minmax(0,.7fr); align-items:start; gap:clamp(14px,2.3vw,36px); padding-block:clamp(22px,3vw,50px); border-top:1px solid #333 }
-.experience-copy { padding-top:3px }
-.experience-role { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; margin-bottom:14px; color:#acacac; font-size:13px; line-height:1.4 }
-.experience-role span + span::before { content:'·'; margin-right:12px }
-.experience-copy h3 { font-size:clamp(26px,3.35vw,58px); font-weight:500; line-height:1.04; letter-spacing:-.05em }
-.experience-copy > p:last-child { max-width:34ch; margin-top:15px; color:#bfbfbf; font-size:clamp(14px,1.17vw,20px); line-height:1.55 }
-.experience-media { min-width:0; margin:0 }
-.experience-image { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:9px; background:#202020 }
+.experience-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); align-items:start; gap:clamp(22px,4vw,64px); padding-block:clamp(24px,3.4vw,56px); border-top:1px solid #333 }
+.experience-copy h3 { margin-bottom:clamp(12px,1.65vw,24px); font-size:clamp(28px,3.35vw,58px); font-weight:500; line-height:1.06; letter-spacing:-.05em }
+.experience-logo { display:grid; place-items:center; width:clamp(64px,6.1vw,98px); aspect-ratio:1; margin-bottom:clamp(16px,1.8vw,26px); border-radius:50%; background:#fff; overflow:hidden }
+.experience-logo img { display:block; width:70%; height:70%; object-fit:contain }
+.experience-logo--lead img { width:100%; height:100% }
+.experience-logo--bykod { border:1px solid #3b3b3b; background:#202020; color:#f4f4f4; font-weight:600; font-size:clamp(19px,2vw,27px); letter-spacing:.05em }
+.experience-meta { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; color:#d4d4d4; font-size:clamp(13px,1.1vw,16px); line-height:1.4 }
+.experience-meta span + span::before { content:'·'; margin-right:12px }
+.experience-description { max-width:42ch; margin-top:11px; color:#bfbfbf; font-size:clamp(15px,1.22vw,20px); line-height:1.55 }
+.experience-image { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:9px; background:#181818 }
 .experience-team { object-position:center 66% }
 .experience-hotel { object-position:center 48% }
-.experience-media figcaption { margin:9px 0 0; color:#adadad; font-size:clamp(12px,1vw,16px); line-height:1.4 }
-.experience-brands { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; border:1px solid #333; overflow:hidden }
-.experience-brands img { width:100%; height:100%; min-height:0; object-fit:contain; background:#e4e7e7 }
-.experience-brands img:last-child { background:#000 }
-.experience-link { display:flex; flex-direction:column; min-width:0; border:1px solid #333; border-radius:9px; background:#151515; color:inherit; text-decoration:none; overflow:hidden; transition:border-color .2s,background-color .2s }
-.experience-link:hover { border-color:#777; background:#222 }
-.experience-link:focus-visible,.portfolio-quote a:focus-visible { outline:2px solid currentColor; outline-offset:4px }
-.experience-thumb { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; background:#212121 }
-.experience-thumb--agency { object-fit:contain; padding:8%; background:#fff }
-.experience-link-label { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:clamp(11px,1.2vw,19px); font-size:clamp(13px,1.12vw,17px); line-height:1.3 }
-.experience-link-label strong { font-weight:550; overflow-wrap:anywhere }
-.experience-link-label small { display:block; margin-top:4px; color:#bcbcbc; font-size:.84em }
-.experience-link-label > span:last-child { flex:none; font-size:19px }
-.experience-support { display:grid; gap:12px; padding:clamp(14px,1.65vw,26px); border-radius:9px; background:#181818; font-size:clamp(13px,1.05vw,18px); line-height:1.35 }
-.experience-support h4 { color:#bcbcbc; font-size:inherit; font-weight:400 }
-.experience-support ul { display:grid; gap:9px; list-style:none }
-.experience-support li + li { border-top:1px solid #3a3a3a; padding-top:9px }
+.experience-project { object-fit:contain }
+.portfolio-quote a:focus-visible { outline:2px solid currentColor; outline-offset:4px }
 .portfolio-quote { display:grid; grid-template-columns:minmax(0,.36fr) minmax(0,1fr); gap:clamp(12px,2.6vw,44px); align-items:start; margin-block:clamp(36px,6vw,108px) 0; padding:clamp(29px,6vw,110px); background:#e9e8e5; color:#111; border-radius:10px }
 .portfolio-quote-mark { align-self:start; margin-top:-.07em; font-family:Georgia,serif; font-size:clamp(120px,24vw,455px); font-weight:700; line-height:.8; user-select:none }
 .portfolio-quote blockquote { margin:0 }
@@ -196,11 +183,8 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
  .orv-about-photo{width:min(100%,360px);justify-self:center}
  .orv-about-role{margin-bottom:20px}
  .experience,.portfolio-quote{width:calc(100% - 2 * var(--edge))}
- .experience-row{grid-template-columns:minmax(0,1fr);gap:15px}
- .experience-copy > p:last-child{margin-top:10px;max-width:42ch}
- .experience-role{margin-bottom:9px}
- .experience-link{display:grid;grid-template-columns:clamp(75px,24%,125px) minmax(0,1fr)}
- .experience-thumb{height:100%;min-height:68px;aspect-ratio:unset}
+ .experience-row{grid-template-columns:minmax(0,1fr);gap:20px}
+ .experience-image{aspect-ratio:16/10}
  .portfolio-quote{grid-template-columns:minmax(0,1fr);gap:16px}
  .portfolio-quote-mark{height:.41em;font-size:130px;margin-top:-.08em}
  .portfolio-quote figcaption{grid-column:1;margin-top:7px}
@@ -329,51 +313,30 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
   <h2 id="experience-title">Kinh nghiệm &amp; dự án</h2>
   <article class="experience-row" aria-labelledby="experience-the-lead">
    <div class="experience-copy" data-section-reveal>
-    <p class="experience-role"><span lang="en">Content Creator Intern</span><span>3 tháng</span></p>
     <h3 id="experience-the-lead">The Lead Agency</h3>
-    <p>Tôi tham gia lên kế hoạch nội dung, quay và chỉnh sửa video cho các kênh truyền thông của agency.</p>
+    <span class="experience-logo experience-logo--lead"><img src="./images/the-lead-agency-logo.jpg" alt="" loading="lazy" decoding="async"></span>
+    <p class="experience-meta"><span lang="en">Content Creator Intern</span><span>Thực tập 3 tháng</span></p>
+    <p class="experience-description">Tôi tham gia lên ý tưởng và kế hoạch nội dung, quay và dựng video cho các kênh truyền thông của agency.</p>
    </div>
-   <figure class="experience-media" data-section-reveal>
-    <img class="experience-image experience-team" src="./images/the-lead-team.jpg" alt="Ảnh tập thể The Lead Agency dịp Trung thu" loading="lazy" decoding="async">
-    <figcaption>Đội ngũ The Lead Agency</figcaption>
-   </figure>
-   <a class="experience-link" href="https://www.tiktok.com/@thelead.office" target="_blank" rel="noopener noreferrer" data-section-reveal>
-    <img class="experience-thumb experience-thumb--agency" src="./images/the-lead-agency-logo.jpg" alt="" loading="lazy" decoding="async">
-    <span class="experience-link-label"><span><strong>Chuyện Nhà The Lead</strong><small>Xem kênh TikTok</small></span><span aria-hidden="true">↗</span></span>
-   </a>
+   <img class="experience-image experience-team" src="./images/the-lead-team.jpg" alt="Ảnh tập thể The Lead Agency dịp Trung thu" loading="lazy" decoding="async" data-section-reveal>
   </article>
   <article class="experience-row" aria-labelledby="experience-bykod">
    <div class="experience-copy" data-section-reveal>
-    <p class="experience-role"><span lang="en">Marketing Intern</span><span>3 tháng</span></p>
     <h3 id="experience-bykod">ByKod Project</h3>
-    <p>Tôi hỗ trợ triển khai hoạt động marketing và sản xuất nội dung cho các thương hiệu.</p>
+    <span class="experience-logo experience-logo--bykod" aria-hidden="true">BK</span>
+    <p class="experience-meta"><span lang="en">Marketing Intern</span><span>Thực tập 3 tháng</span></p>
+    <p class="experience-description">Tôi hỗ trợ triển khai hoạt động marketing và sản xuất nội dung cho các thương hiệu như La Cabaña và Olivia’s Prime Steakhouse.</p>
    </div>
-   <figure class="experience-media" data-section-reveal>
-    <div class="experience-image experience-brands">
-     <img src="./images/logos/la-cabana.jpg" alt="La Cabaña" loading="lazy" decoding="async">
-     <img src="./images/logos/olivias-prime.png" alt="Olivia’s Prime Steakhouse" loading="lazy" decoding="async">
-    </div>
-    <figcaption>Thương hiệu trong kỳ thực tập</figcaption>
-   </figure>
-   <div class="experience-support" data-section-reveal>
-    <h4>Thương hiệu &amp; dự án</h4>
-    <ul><li>La Cabaña</li><li>Olivia’s Prime Steakhouse</li><li>An Nga</li><li>SeaTours Travel</li></ul>
-   </div>
+   <img class="experience-image experience-project" src="./images/logos/la-cabana.jpg" alt="Hình ảnh thương hiệu La Cabaña trong kỳ thực tập tại ByKod Project" loading="lazy" decoding="async" data-section-reveal>
   </article>
   <article class="experience-row" aria-labelledby="experience-oday">
    <div class="experience-copy" data-section-reveal>
-    <p class="experience-role"><span>Dự án TikTok</span></p>
     <h3 id="experience-oday">ODAY.STAY</h3>
-    <p>Tôi tham gia sản xuất video ngắn kể lại những tình huống thường ngày tại khách sạn.</p>
+    <span class="experience-logo"><img src="./images/logos/oday-stay.jpg" alt="" loading="lazy" decoding="async"></span>
+    <p class="experience-meta"><span>Dự án nội dung TikTok</span></p>
+    <p class="experience-description">Tôi tham gia sản xuất video ngắn về những tình huống thường ngày tại khách sạn cho kênh Ở đâu em của Ở đây.</p>
    </div>
-   <figure class="experience-media" data-section-reveal>
-    <img class="experience-image experience-hotel" src="./images/oday-stay-suite.jpg" alt="Khung cảnh nhìn ra sông từ phòng Suite của ODAY.STAY" loading="lazy" decoding="async">
-    <figcaption>Không gian tại ODAY.STAY</figcaption>
-   </figure>
-   <a class="experience-link" href="https://www.tiktok.com/@odau.oday" target="_blank" rel="noopener noreferrer" data-section-reveal>
-    <img class="experience-thumb" src="./images/oday-stay-tiktok.jpg" alt="" loading="lazy" decoding="async">
-    <span class="experience-link-label"><span><strong>Ở đâu em của Ở đây</strong><small>Xem kênh TikTok</small></span><span aria-hidden="true">↗</span></span>
-   </a>
+   <img class="experience-image experience-hotel" src="./images/oday-stay-suite.jpg" alt="Khung cảnh nhìn ra sông từ phòng Suite của ODAY.STAY" loading="lazy" decoding="async" data-section-reveal>
   </article>
  </section>
  <figure class="portfolio-quote" id="quote" lang="en">
