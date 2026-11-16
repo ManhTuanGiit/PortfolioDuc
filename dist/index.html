@@ -30,21 +30,18 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 #cross i{position:absolute;left:50%;top:-.62em;margin-left:-.3em;font:400 13px 'IBM Plex Mono',monospace;color:var(--mid);background:var(--bg);padding:0 .3em;line-height:1.2}
 #rule{position:absolute;left:3.5vw;right:3.5vw;top:50%;height:1px;background:var(--line);transform-origin:left;transform:scaleX(0)}
 #name{position:absolute;left:0;top:0;padding:6px 11px;background:var(--ink);color:var(--bg);border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.04em;pointer-events:none;opacity:0;transition:opacity .16s;white-space:nowrap}
-/* Logo strip at the start of the video section */
-.brand-strip{--logo-size:min(20svh,clamp(80px,8.4vw,126px));--logo-gap:clamp(14px,2.4vw,38px);position:absolute;z-index:2;inset:0 0 auto;height:37.5svh;display:grid;grid-template-columns:minmax(0,1fr);align-content:center;gap:clamp(5px,1.6svh,14px);pointer-events:none}
+/* Independent logo and name rows at the start of the video section */
+.brand-strip{--logo-size:min(20svh,clamp(76px,8.4vw,126px));position:absolute;z-index:2;inset:0 0 auto;height:37.5svh;display:grid;grid-template-columns:minmax(0,1fr);align-content:center;gap:clamp(8px,2svh,18px);pointer-events:none}
 .brand-viewport{display:flex;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;user-select:none;pointer-events:auto}
 .brand-viewport::-webkit-scrollbar{display:none}
 .brand-viewport:active{cursor:grabbing}
-.brand-logos{display:flex;flex:0 0 auto;min-width:100%;justify-content:space-evenly;gap:var(--logo-gap);padding:3px calc(var(--logo-gap) / 2);list-style:none}
-.brand-logos li{display:grid;justify-items:center;align-content:start;gap:clamp(7px,1.3svh,12px);flex:0 0 clamp(116px,10.5vw,146px)}
-.brand-badge{display:grid;place-items:center;width:var(--logo-size);aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0005}
-.brand-badge img{display:block;width:63%;height:63%;object-fit:contain;pointer-events:none}
-.brand-label{color:#f4f1ea;font-size:clamp(10.5px,1vw,12.5px);line-height:1.2;font-weight:500;white-space:nowrap}
-strong.brand-label{font-weight:700}
-.brand-toggle{justify-self:end;margin-inline-end:clamp(14px,3vw,42px);min-height:28px;padding:3px 11px;border:1px solid #ffffff46;border-radius:100px;background:#191919;color:var(--ink);font:500 11px 'IBM Plex Mono',monospace;cursor:pointer;pointer-events:auto}
-.brand-toggle:hover{background:#303030}
-.brand-viewport:focus-visible,.brand-toggle:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
-@media(max-width:760px){.brand-toggle{min-height:36px}}
+.brand-viewport:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.brand-row{display:flex;flex:0 0 auto;min-width:100%;justify-content:space-around;align-items:center;list-style:none}
+.brand-logos{--gap:clamp(18px,3.2vw,48px);gap:var(--gap);padding-inline:calc(var(--gap) / 2)}
+.brand-logos li{flex:none}
+.brand-badge{display:grid;place-items:center;width:var(--logo-size);aspect-ratio:1;background:#fff}
+.brand-badge img{display:block;width:82%;height:82%;object-fit:contain;pointer-events:none}
+.brand-names{--gap:clamp(24px,4.2vw,68px);gap:var(--gap);padding:4px calc(var(--gap) / 2);color:var(--ink);font-size:clamp(12px,1.08vw,16px);line-height:1.25;font-weight:550;white-space:nowrap}
 </style>
 <style>
 @font-face {
@@ -276,19 +273,30 @@ strong.brand-label{font-weight:700}
 <section id="track" aria-label="Nguyễn Đình Đức video portfolio">
   <span id="portfolio" aria-hidden="true"></span>
   <div class="brand-strip" lang="vi">
-    <div class="brand-viewport" id="brand-viewport" role="region" aria-label="Dải logo trong portfolio" tabindex="0">
-      <ul class="brand-logos" aria-label="Danh sách logo">
-        <li><span class="brand-badge"><img src="./images/logos/duy-tan.jpg" alt="" draggable="false"></span><strong class="brand-label">DTU</strong></li>
-        <li><span class="brand-badge"><img src="./images/logos/seatours.jpg" alt="" draggable="false"></span><span class="brand-label">SeaTours Travel</span></li>
-        <li><span class="brand-badge"><img src="./images/logos/em-home.jpg" alt="" draggable="false"></span><span class="brand-label">emhome.danang</span></li>
-        <li><span class="brand-badge"><img src="./images/logos/fitness.jpg" alt="" draggable="false"></span><span class="brand-label">blacksgym.dn</span></li>
-        <li><span class="brand-badge"><img src="./images/logos/olivias-prime.png" alt="" draggable="false"></span><span class="brand-label">oliviasprimesteakhouse</span></li>
-        <li><span class="brand-badge"><img src="./images/logos/la-cabana.jpg" alt="" draggable="false"></span><span class="brand-label">lacabana.dn</span></li>
-        <li><span class="brand-badge"><img src="./images/logos/oday-stay.jpg" alt="" draggable="false"></span><span class="brand-label">odaystay</span></li>
-        <li><span class="brand-badge"><img src="./images/the-lead-agency-logo.jpg" alt="" draggable="false"></span><span class="brand-label">TheLeadAgency</span></li>
+    <div class="brand-viewport" id="brand-viewport" role="region" aria-label="Logo các thương hiệu" tabindex="0" data-brand-speed="-24">
+      <ul class="brand-row brand-logos">
+        <li><span class="brand-badge"><img src="./images/logos/duy-tan.jpg" alt="DTU" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/seatours.jpg" alt="SeaTours Travel" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/em-home.jpg" alt="emhome.danang" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/fitness.jpg" alt="blacksgym.dn" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/olivias-prime.png" alt="oliviasprimesteakhouse" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/la-cabana.jpg" alt="lacabana.dn" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/logos/oday-stay.jpg" alt="odaystay" draggable="false"></span></li>
+        <li><span class="brand-badge"><img src="./images/the-lead-agency-logo.jpg" alt="TheLeadAgency" draggable="false"></span></li>
       </ul>
     </div>
-    <button class="brand-toggle" type="button" aria-controls="brand-viewport" hidden>Tạm dừng</button>
+    <div class="brand-viewport" id="brand-names" role="region" aria-label="Tên các thương hiệu" tabindex="0" data-brand-speed="37">
+      <ul class="brand-row brand-names">
+        <li><strong>DTU</strong></li>
+        <li>SeaTours Travel</li>
+        <li>emhome.danang</li>
+        <li>blacksgym.dn</li>
+        <li>oliviasprimesteakhouse</li>
+        <li>lacabana.dn</li>
+        <li>odaystay</li>
+        <li>TheLeadAgency</li>
+      </ul>
+    </div>
   </div>
   <div class="stage" id="stage">
     <h2 id="portfolio-heading" lang="vi" aria-label="Nguyễn Đình Đức, Marketing">
@@ -503,98 +511,123 @@ strong.brand-label{font-weight:700}
 </script>
 <script>
 (() => {
-  const viewport = document.getElementById('brand-viewport');
-  const logos = viewport.querySelector('.brand-logos');
-  const toggle = document.querySelector('.brand-toggle');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = motion.matches;
-  let hovered = false;
-  let visible = false;
-  let frame = 0;
-  let lastTime = 0;
-  let offset = 0;
-  let length = 0;
-  let drag = null;
 
-  // Repeat the artwork on either side so wrapping is visually seamless.
-  const copy = logos.cloneNode(true);
-  copy.setAttribute('aria-hidden', 'true');
-  logos.before(copy);
-  logos.after(copy.cloneNode(true));
+  function setupMarquee(viewport) {
+    const row = viewport.querySelector('.brand-row');
+    const speed = Number(viewport.dataset.brandSpeed) / 1000;
+    let hovered = false;
+    let visible = false;
+    let frame = 0;
+    let lastTime = 0;
+    let offset = 0;
+    let length = 0;
+    let pointer = null;
+    let idleTimer = 0;
 
-  function tick(now) {
-    const elapsed = lastTime ? Math.min(now - lastTime, 40) : 0;
-    lastTime = now;
-    offset -= elapsed * 0.028;
-    if (offset < length * 0.25) offset += length;
-    viewport.scrollLeft = offset;
-    frame = requestAnimationFrame(tick);
-  }
+    const copy = row.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    // Keep an extra copy in each direction for native swipe momentum.
+    row.before(copy, copy.cloneNode(true));
+    row.after(copy.cloneNode(true), copy.cloneNode(true));
 
-  function syncPlayback() {
-    if (paused || hovered || !visible || document.hidden || !length) {
-      if (frame) cancelAnimationFrame(frame);
-      frame = 0;
-      lastTime = 0;
-    } else if (!frame) {
-      offset = viewport.scrollLeft;
+    function wrap(position) {
+      return 2 * length + ((position % length) + length) % length;
+    }
+
+    function tick(now) {
+      if (motion.matches) {
+        syncPlayback();
+        return;
+      }
+      const elapsed = lastTime ? Math.min(now - lastTime, 40) : 0;
+      lastTime = now;
+      offset = wrap(offset + elapsed * speed);
+      viewport.scrollLeft = offset;
       frame = requestAnimationFrame(tick);
     }
+
+    function syncPlayback() {
+      if (motion.matches || hovered || pointer || idleTimer || viewport.matches(':focus-visible') || !visible || document.hidden || !length) {
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        lastTime = 0;
+      } else if (!frame) {
+        offset = wrap(viewport.scrollLeft);
+        frame = requestAnimationFrame(tick);
+      }
+    }
+
+    function measure() {
+      const next = row.getBoundingClientRect().width;
+      if (!next || next === length) return;
+      const position = length ? viewport.scrollLeft / length : 1;
+      length = next;
+      viewport.scrollLeft = wrap(position * length);
+      offset = viewport.scrollLeft;
+      syncPlayback();
+    }
+
+    function waitForScroll() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        idleTimer = 0;
+        syncPlayback();
+      }, 1100);
+      syncPlayback();
+    }
+
+    motion.addEventListener('change', syncPlayback);
+    document.addEventListener('visibilitychange', syncPlayback);
+    const visibility = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncPlayback();
+    });
+    visibility.observe(viewport);
+    new ResizeObserver(measure).observe(row);
+    measure();
+
+    viewport.addEventListener('focus', syncPlayback);
+    viewport.addEventListener('blur', syncPlayback);
+    viewport.addEventListener('pointerenter', event => {
+      if (event.pointerType !== 'mouse') return;
+      hovered = true;
+      syncPlayback();
+    });
+    viewport.addEventListener('pointerleave', event => {
+      if (event.pointerType !== 'mouse') return;
+      hovered = false;
+      syncPlayback();
+    });
+    viewport.addEventListener('pointerdown', event => {
+      if (!event.isPrimary || event.button !== 0) return;
+      pointer = { id:event.pointerId, x:event.clientX, scroll:viewport.scrollLeft };
+      syncPlayback();
+      // Leave touch swipes and momentum to the browser.
+      if (event.pointerType === 'mouse') viewport.setPointerCapture(event.pointerId);
+    });
+    viewport.addEventListener('pointermove', event => {
+      if (event.pointerType === 'mouse' && pointer?.id === event.pointerId) {
+        viewport.scrollLeft = wrap(pointer.scroll + pointer.x - event.clientX);
+      }
+    });
+    function releasePointer(event) {
+      if (pointer?.id !== event.pointerId) return;
+      pointer = null;
+      waitForScroll();
+    }
+    viewport.addEventListener('pointerup', releasePointer);
+    viewport.addEventListener('pointercancel', releasePointer);
+    viewport.addEventListener('lostpointercapture', releasePointer);
+    viewport.addEventListener('scroll', () => {
+      if (idleTimer) waitForScroll();
+    }, {passive:true});
+    viewport.addEventListener('wheel', event => {
+      if (event.deltaX || event.shiftKey) waitForScroll();
+    }, {passive:true});
   }
 
-  function setPaused(value) {
-    paused = value;
-    toggle.textContent = paused ? 'Tiếp tục' : 'Tạm dừng';
-    syncPlayback();
-  }
-
-  function measure() {
-    const next = logos.getBoundingClientRect().width;
-    if (!next || next === length) return;
-    const position = length ? viewport.scrollLeft / length : 1;
-    length = next;
-    viewport.scrollLeft = position * length;
-    offset = viewport.scrollLeft;
-    syncPlayback();
-  }
-
-  toggle.hidden = false;
-  setPaused(paused);
-  toggle.addEventListener('click', () => setPaused(!paused));
-  motion.addEventListener('change', event => setPaused(event.matches));
-  document.addEventListener('visibilitychange', syncPlayback);
-  const visibility = new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting;
-    syncPlayback();
-  });
-  visibility.observe(viewport);
-  new ResizeObserver(measure).observe(logos);
-  measure();
-
-  viewport.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'mouse') { hovered = true; syncPlayback(); }
-  });
-  viewport.addEventListener('pointerleave', event => {
-    if (event.pointerType === 'mouse') { hovered = false; syncPlayback(); }
-  });
-  viewport.addEventListener('pointerdown', event => {
-    if (!event.isPrimary || event.button !== 0) return;
-    setPaused(true);
-    // Keep touch scrolling and momentum native. Track mouse drags separately.
-    if (event.pointerType !== 'mouse') return;
-    drag = { x:event.clientX, scroll:viewport.scrollLeft, pointer:event.pointerId };
-    viewport.setPointerCapture(event.pointerId);
-  });
-  viewport.addEventListener('pointermove', event => {
-    if (drag?.pointer === event.pointerId) viewport.scrollLeft = drag.scroll + drag.x - event.clientX;
-  });
-  viewport.addEventListener('lostpointercapture', () => { drag = null; });
-  viewport.addEventListener('wheel', event => {
-    if (event.deltaX || event.shiftKey) setPaused(true);
-  }, {passive:true});
-  viewport.addEventListener('keydown', event => {
-    if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) setPaused(true);
-  });
+  document.querySelectorAll('[data-brand-speed]').forEach(setupMarquee);
 })();
 </script>
 <script type="module">
