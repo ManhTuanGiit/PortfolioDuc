@@ -25,21 +25,9 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 #l2 span{margin-left:15vw}
 #cap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:15em;text-align:center;font-size:clamp(9px,.74vw,13px);font-weight:500;line-height:1.3;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block}
-.top{position:absolute;left:32px;right:32px;top:26px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
-.top{justify-content:flex-start}.acts{margin-left:auto}
-#pager{display:flex;margin:-26px 0 0 28px;pointer-events:auto}
-#pager span{display:grid;place-items:center;width:44px;height:50px;border:1px solid var(--line);border-top:0;margin-left:-1px;font:400 11px 'IBM Plex Mono',monospace;color:var(--mid)}
 #glow{position:absolute;left:0;right:0;top:0;height:42%;background:linear-gradient(rgba(244,241,234,.1),rgba(244,241,234,0))}
 #cross{position:absolute;left:32px;right:32px;top:37.5%;height:1px;background:var(--line)}
 #cross i{position:absolute;left:50%;top:-.62em;margin-left:-.3em;font:400 13px 'IBM Plex Mono',monospace;color:var(--mid);background:var(--bg);padding:0 .3em;line-height:1.2}
-.logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:600;letter-spacing:.09em}
-.logo svg{width:22px;height:18px;fill:var(--ink)}
-.acts{display:flex;align-items:center;gap:7px;pointer-events:auto}
-.acts a{display:flex;align-items:center;gap:9px;height:32px;padding:0 15px;border:1px solid rgba(244,241,234,.55);border-radius:99px;color:var(--ink);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;transition:background .2s,color .2s}
-.acts a:hover{background:var(--ink);color:var(--bg)}
-.acts a i{width:6px;height:6px;border-radius:50%;background:currentColor}
-.acts a b{display:block;width:13px;height:7px;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
-#hint{position:absolute;left:50%;top:33px;transform:translateX(-50%);font:400 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--ink);padding-bottom:6px;border-bottom:1px solid var(--line)}
 .bot{position:absolute;left:32px;right:32px;bottom:26px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;font-size:12.5px;line-height:1.35;pointer-events:none}
 .bot p{color:var(--ink);max-width:21em}
 .bot .mid{font:400 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em}
@@ -49,8 +37,8 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 #rule{position:absolute;left:3.5vw;right:3.5vw;top:50%;height:1px;background:var(--line);transform-origin:left;transform:scaleX(0)}
 #name{position:absolute;left:0;top:0;padding:6px 11px;background:var(--ink);color:var(--bg);border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.04em;pointer-events:none;opacity:0;transition:opacity .16s;white-space:nowrap}
 @media (max-width:760px){
-  .top{left:18px;right:18px;top:18px}.bot{left:18px;right:18px;bottom:18px;grid-template-columns:1fr auto}.bot .mid{display:none}
-  #hint,#pager{display:none}.bot p{max-width:17em;font-size:11px}
+  .bot{left:18px;right:18px;bottom:18px;grid-template-columns:1fr auto}.bot .mid{display:none}
+  .bot p{max-width:17em;font-size:11px}
 }
 </style>
 <style>
@@ -113,9 +101,6 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .orv-growth { top:calc(258 * var(--u)); right:calc(80 * var(--u)); display:flex; align-items:center; gap:calc(7 * var(--u)); padding:calc(5 * var(--u)) calc(9 * var(--u)) calc(5 * var(--u)) calc(5 * var(--u)); border-radius:50px; background:#ffffff65; backdrop-filter:blur(9px); font-size:max(10px,calc(13 * var(--u))); font-weight:600 }
 .orv-growth i { font-style:normal; display:grid; place-items:center; width:calc(32 * var(--u)); aspect-ratio:1; border-radius:50%; background:#111; color:white }
 .orv-available { right:var(--edge); top:calc(442 * var(--u)); text-align:right; font-size:max(10px,calc(13 * var(--u))); line-height:1.2 }
-.orv-plate { top:calc(444 * var(--u)); left:50%; translate:-50% 0; width:calc(364 * var(--u)); height:calc(73 * var(--u)); display:flex; align-items:center; gap:calc(13 * var(--u)); padding:0 calc(24 * var(--u)); border:1px solid #ffffff26; color:#fff; background:#1118; border-radius:calc(9 * var(--u)); backdrop-filter:blur(14px); font:640 calc(25 * var(--u)) Archivo,sans-serif; font-stretch:118%; letter-spacing:.09em }
-.orv-plate svg { width:calc(25 * var(--u)); fill:currentColor }
-.orv-plate i { width:calc(42 * var(--u)); height:calc(11 * var(--u)); margin-left:auto; border-block:1px solid #fff; opacity:.75 }
 .orv-logos { top:calc(855 * var(--u)); left:50%; translate:-50% 0; width:calc(460 * var(--u)); display:flex; justify-content:space-between; color:white; font-size:max(10px,calc(17 * var(--u))); font-weight:650; text-shadow:0 1px 4px #000 }
 .orv-mini { top:calc(693 * var(--u)); left:var(--edge); width:calc(341 * var(--u)); height:calc(208 * var(--u)); padding:calc(8 * var(--u)); display:grid; grid-template-columns:1fr 1fr; gap:calc(8 * var(--u)); background:#cdcdcd }
 .orv-mini article { position:relative; display:flex; flex-direction:column; overflow:hidden; padding:calc(12 * var(--u)); background:#151515; color:#f4f4f4; font-size:max(8px,calc(10 * var(--u))); line-height:1.15 }
@@ -187,7 +172,6 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
  .orv-about p{margin:calc(8 * var(--u)) 0 calc(12 * var(--u))}
  .orv-photo{grid-area:4/1/5/3;width:calc(100% + 2 * var(--edge));margin-inline:calc(-1 * var(--edge));height:calc(470 * var(--u));overflow:hidden}
  .orv-photo img{object-position:center 15%}
- .orv-plate{grid-area:4/1/5/3;justify-self:center;margin-top:calc(80 * var(--u));width:calc(230 * var(--u));height:calc(49 * var(--u));font-size:calc(20 * var(--u))}
  .orv-logos{grid-area:4/1/5/3;align-self:end;justify-self:center;width:80%;padding-bottom:calc(18 * var(--u))}
  .orv-growth{grid-area:5/1/6/3;justify-self:start}
  .orv-mini{grid-area:6/1/7/3;width:100%;height:calc(196 * var(--u))}
@@ -225,7 +209,6 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
   <div class="orv-about"><small>● (ABOUT)</small><p>Building stunning websites for brands that deserve to be seen.</p><a class="orv-button" href="#portfolio">Explore Work <span aria-hidden="true">↗</span></a></div>
   <div class="orv-growth"><i aria-hidden="true">✓</i> True Growth</div>
   <p class="orv-available">We’re available<br>● for you</p>
-  <a class="orv-plate" href="#statement" aria-label="Orvante studio statement"><svg viewBox="0 0 22 18" aria-hidden="true"><path d="M11 0l11 18h-6.2L11 9.6 6.2 18H0z"/></svg>ORVANTE<i aria-hidden="true"></i></a>
   <div class="orv-logos" aria-label="Fictional partner names"><span>Lumon</span><span>Paperfold</span><span>Northwind</span></div>
   <div class="orv-mini">
    <article><p><strong data-count="400">400+</strong>Trusted Partner</p><div class="orv-marks"><span>◈ Halcyon</span><span>◒ Ostra</span><span>◇ Fenwick</span><span>✣ Monolo</span><span>⟐ Kitefly</span><span>⌁ Arbor</span></div><a href="#highlights">Studio Highlights <span aria-hidden="true">↗</span></a></article>
@@ -246,12 +229,6 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     <div id="cross"><i>+</i></div>
     <div id="rule"></div>
     <canvas id="gl"></canvas>
-    <div id="hint">START A PROJECT &nbsp;→</div>
-    <header class="top">
-      <div class="logo"><svg viewBox="0 0 22 18"><path d="M11 0l11 18h-6.200L11 9.600 6.200 18H0z"/></svg>VANTE</div>
-      <div id="pager"><span>←</span><span>→</span></div>
-      <nav class="acts"><a href="#"><i></i>LET'S TALK</a><a href="#">MENU<b></b></a></nav>
-    </header>
     <footer class="bot">
       <p>Concepts, explorations and interface experiments shared openly as part of our creative process.</p>
       <div class="mid">VISUALS<s>/</s>FILM<s>/</s>MUSIC<s>/</s>EXPERIMENTS</div>
@@ -358,7 +335,7 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     {duration:1300,easing,fill:'backwards'});
   nav.animate([{opacity:0,transform:'translateY(-14px)'},{opacity:1,transform:'translateY(0)'}],
     {duration:650,easing,fill:'backwards'});
-  hero.querySelectorAll('.orv-date,.orv-contact,.orv-about,.orv-plate,.orv-logos,.orv-mini,.orv-growth,.orv-available,.orv-feature').forEach((element,index) => {
+  hero.querySelectorAll('.orv-date,.orv-contact,.orv-about,.orv-logos,.orv-mini,.orv-growth,.orv-available,.orv-feature').forEach((element,index) => {
     element.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],
       {duration:690,delay:190+index*55,easing,fill:'backwards'});
   });
@@ -543,7 +520,7 @@ function render() {
   const capA = 1 - span(pp, .52, .57);
   $('cap').style.opacity = capA; $('cap').style.transform = `translate(-50%,calc(-50% + ${rise * 34}vh))`;
   const intro = 1 - span(pp, 0, .05);
-  for (const id of ['hint', 'pager', 'cross', 'glow']) $(id).style.opacity = intro;
+  for (const id of ['cross', 'glow']) $(id).style.opacity = intro;
   $('rule').style.transform = `scaleX(${ease(span(pp, .72, .86))})`;
   $('rule').style.top = '50%';
   // ribbon, then the grid
