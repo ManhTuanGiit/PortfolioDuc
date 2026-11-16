@@ -82,16 +82,15 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 <script type="module">
 import * as THREE from 'three';
 
-const R2 = 'https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/';
 const WORK = [
-  ['Roadster 3D', 'designs/roadster-3d-car-landing.mp4'],
-  ['Living Portrait', 'aaaf/living-portrait-hero.mp4'],
-  ['Particle Self', 'aaaf/oraciteslArea.mp4'],
-  ['Robot Jellyfish', 'aaaf/medusa-jellyfish-hero.mp4'],
-  ['Ink Reveal', 'designs/ink-reveal-hover.mp4'],
-  ['Space Voyage', 'designs/space-voyage-video.mp4'],
-  ['Helion Dispatch', 'designs/helion-dispatch-landing.mp4'],
-  ['Honey Bee', 'designs/honey-bee-melli-landing.mp4'],
+  ['Video nội dung 01', './videos/portfolio-01.mp4'],
+  ['Video nội dung 02', './videos/portfolio-02.mp4'],
+  ['Video nội dung 03', './videos/portfolio-03.mp4'],
+  ['Video nội dung 04', './videos/portfolio-04.mp4'],
+  ['Video nội dung 05', './videos/portfolio-05.mp4'],
+  ['Video nội dung 06', './videos/portfolio-06.mp4'],
+  ['Kênh TikTok 01', './videos/portfolio-07.mp4'],
+  ['Kênh TikTok 02', './videos/portfolio-08.mp4'],
 ];
 const $ = id => document.getElementById(id);
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
@@ -147,7 +146,7 @@ void main(){
 }`;
 const cards = WORK.map(([title, src], i) => {
   const v = document.createElement('video');
-  Object.assign(v, {crossOrigin:'anonymous', muted:true, loop:true, playsInline:true, preload:'auto', src:R2 + src});
+  Object.assign(v, {crossOrigin:'anonymous', muted:true, loop:true, playsInline:true, preload:'auto', src});
   v.setAttribute('playsinline', '');
   const tex = new THREE.VideoTexture(v);
   tex.colorSpace = THREE.NoColorSpace; tex.minFilter = THREE.LinearFilter; tex.magFilter = THREE.LinearFilter; tex.generateMipmaps = false;
