@@ -81,8 +81,8 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .orv-hero { position:relative; height:calc(938 * var(--u)); background:#dadada; color:#111; overflow:hidden }
 .orv-artboard { position:relative; width:min(100%,1920px); height:100%; margin:auto }
 .orv-artboard > * { position:absolute; z-index:1 }
-.orv-photo { z-index:0; left:50%; top:calc(-86 * var(--u)); width:calc(764 * var(--u)); height:calc(1024 * var(--u)); translate:-50% 0; }
-.orv-photo img { width:100%; height:100%; display:block; object-fit:cover; mask-image:linear-gradient(90deg,transparent,#000 6% 94%,transparent) }
+.orv-photo { z-index:0; left:50%; top:calc(-40 * var(--u)); width:calc(888 * var(--u)); height:calc(1184 * var(--u)); translate:-52.8% 0; }
+.orv-photo img { width:100%; height:100%; display:block; object-fit:cover }
 .orv-nav { left:var(--edge); top:calc(61 * var(--u)); display:flex; align-items:center; position:absolute; color:#111; padding:calc(4 * var(--u)); background:#fff; border-radius:calc(6 * var(--u)); height:calc(48 * var(--u)); isolation:isolate }
 .orv-nav a { z-index:1; display:grid; place-items:center; min-width:calc(73 * var(--u)); padding:0 calc(13 * var(--u)); height:100%; font-size:max(10px,calc(13 * var(--u))); font-weight:550 }
 .orv-nav a.is-current { color:#fff }
@@ -201,7 +201,7 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 <main>
 <section class="orv orv-hero" id="home" aria-labelledby="orv-title">
  <div class="orv-artboard">
-  <div class="orv-photo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7dc8b8f3-4ccb-4599-8ce4-7f7c7881bad9.webp" alt="Monochrome studio portrait of a model facing away" fetchpriority="high"></div>
+  <div class="orv-photo"><img src="./images/nguyen-dinh-duc-portrait.png" alt="Nguyễn Đình Đức cầm máy ảnh" width="1086" height="1448" fetchpriority="high"></div>
   <nav class="orv-nav" aria-label="Page sections"><i aria-hidden="true"></i><a href="#home">Home</a><a href="#statement">Studio</a><a href="#portfolio">Works</a><a href="#highlights">Highlights</a></nav>
   <p class="orv-date">ORVANTE CONCEPT<br>STUDIO EDITION / 2026</p>
   <a class="orv-button orv-contact" href="#portfolio" aria-label="View portfolio"><span>View Portfolio</span><span aria-hidden="true">↗</span></a>
