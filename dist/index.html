@@ -197,35 +197,27 @@ strong.brand-label{font-weight:700}
 @media(prefers-reduced-motion:reduce){ .orv *, .orv *:before{animation:none!important;transition:none!important} }
 </style>
 <style>
-.portfolio-contact,.portfolio-footer{background:#000;color:#f4f4f4}
-.contact-layout,.footer-layout{width:min(90.42%,1736px);margin-inline:auto}
-.portfolio-contact{padding-block:calc(78 * var(--u)) calc(56 * var(--u))}
-.contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center;gap:clamp(32px,5vw,86px);padding:clamp(28px,4.4vw,70px);border:1px solid #ffffff47;border-radius:calc(14 * var(--u))}
-.contact-kicker{margin-bottom:calc(16 * var(--u));color:#aaa;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.11em}
-.portfolio-contact h2{font-size:clamp(48px,5.9vw,94px);line-height:.96;letter-spacing:-.055em;font-weight:500;text-wrap:balance}
-.contact-cta,.footer-top{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 6px 5px 14px;border:1px solid #ffffff47;border-radius:100px;color:#f4f4f4;text-decoration:none;font-size:13px;white-space:nowrap;transition:background .2s}
-.contact-cta{margin-top:clamp(22px,3vw,40px);font-size:15px}
-.contact-cta span,.footer-top span{display:grid;place-items:center;width:28px;aspect-ratio:1;border-radius:50%;background:#f4f4f4;color:#111}
-.contact-cta:hover,.footer-top:hover{background:#212121}
-.contact-details{font-style:normal}
-.contact-item{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;padding:clamp(10px,1.35vw,19px) 0;border-top:1px solid var(--line);color:inherit;text-decoration:none;line-height:1.35}
-.contact-item:last-child{border-bottom:1px solid var(--line)}
-.contact-label{grid-column:1/-1;margin-bottom:5px;color:#ababab;font-size:clamp(11px,1vw,14px)}
-.contact-value{font-size:clamp(16px,1.7vw,23px);overflow-wrap:anywhere}
-.contact-arrow{color:#ababab}
-a.contact-item:hover .contact-value,.footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
-.footer-layout{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;border-top:1px solid #ffffff24;padding-block:clamp(17px,2.5vw,36px);font-size:clamp(12px,1.1vw,15px);color:#b8b7b3}
-.footer-links{display:flex;flex-wrap:wrap;gap:clamp(16px,2.3vw,32px)}
-.footer-links a{color:inherit;text-decoration:none}
-.footer-top{justify-self:end}
-.contact-item:focus-visible,.contact-cta:focus-visible,.footer-layout a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.portfolio-footer{background:#000;color:#f4f4f4;padding-top:clamp(52px,7vw,104px)}
+.footer-shell{width:min(90.42%,1736px);margin-inline:auto}
+.footer-topline,.footer-base{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.footer-topline{padding-bottom:clamp(22px,3vw,44px)}
+.footer-identity h2{font-size:clamp(28px,3.5vw,50px);font-weight:500;line-height:1.05;letter-spacing:-.045em;word-spacing:.08em}
+.footer-identity p{margin-top:8px;color:#a6a6a6;font-size:clamp(13px,1.25vw,16px)}
+.footer-columns{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,5vw,76px);padding-block:clamp(24px,3.9vw,56px);border-block:1px solid #ffffff24}
+.footer-columns h3{margin-bottom:14px;color:#aaa;font-size:clamp(12px,1.1vw,15px);font-weight:500}
+.footer-links,.footer-details{display:grid;justify-items:start;gap:10px}
+.footer-links,.footer-details,.footer-address{font-size:clamp(14px,1.35vw,18px);line-height:1.45}
+.footer-details,.footer-address{font-style:normal;overflow-wrap:anywhere}
+.footer-shell a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-shell a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.footer-base{padding-block:clamp(16px,2.3vw,32px);color:#aaa;font-size:clamp(12px,1.15vw,15px)}
+.footer-action{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 6px 5px 14px;border:1px solid #ffffff47;border-radius:100px;color:#f4f4f4;font-size:13px;white-space:nowrap;transition:background .2s}
+.footer-action span{display:grid;place-items:center;width:28px;aspect-ratio:1;border-radius:50%;background:#f4f4f4;color:#111}
+.footer-shell .footer-action:hover{background:#212121;text-decoration:none}
 @media(max-width:760px){
- .portfolio-contact{padding-block:45px 35px}
- .contact-layout{grid-template-columns:minmax(0,1fr);gap:28px;padding:24px}
- .portfolio-contact h2{font-size:clamp(40px,10vw,58px)}
- .contact-item{padding-block:12px}
- .footer-layout{grid-template-columns:minmax(0,1fr) auto}
- .footer-links{grid-row:2;grid-column:1/-1}
+ .footer-topline{align-items:flex-start;flex-direction:column;gap:18px}
+ .footer-columns{grid-template-columns:minmax(0,1fr);gap:25px}
+ .footer-columns h3{margin-bottom:10px}
 }
 </style>
 </head>
@@ -316,35 +308,42 @@ a.contact-item:hover .contact-value,.footer-links a:hover{text-decoration:underl
   <figure class="orv-card orv-portrait"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/addecc7d-666f-4342-8290-ed7f7cbbffd6.webp" alt="Side profile in a white shirt" loading="lazy"></figure>
  </section>
  <p class="orv-concept">Orvante is a fictional studio concept.</p>
- <section class="portfolio-contact" id="contact" aria-labelledby="contact-title" lang="vi">
-  <div class="contact-layout">
-   <div data-contact-reveal>
-    <p class="contact-kicker">LIÊN HỆ</p>
-    <h2 id="contact-title">Cùng kết nối.</h2>
-    <a class="contact-cta" href="https://zalo.me/0386001455" target="_blank" rel="noopener noreferrer">Nhắn Zalo <span aria-hidden="true">↗</span></a>
-   </div>
-   <address class="contact-details">
-    <a class="contact-item" href="tel:0386001455" data-contact-reveal>
-     <span class="contact-label">Điện thoại</span><span class="contact-value">0386001455</span><span class="contact-arrow" aria-hidden="true">↗</span>
-    </a>
-    <a class="contact-item" href="mailto:nguyendinhduc6225@gmail.com" data-contact-reveal>
-     <span class="contact-label">Email</span><span class="contact-value">nguyendinhduc6225<wbr>@gmail.com</span><span class="contact-arrow" aria-hidden="true">↗</span>
-    </a>
-    <div class="contact-item" data-contact-reveal>
-     <span class="contact-label">Địa chỉ</span><span class="contact-value">01 Phần Lăng 8, An Khê, Thanh Khê</span>
-    </div>
-   </address>
-  </div>
- </section>
 </section>
 </main>
-<footer class="orv portfolio-footer" lang="vi">
- <div class="footer-layout">
-  <span data-contact-reveal>© 2026 Nguyễn Đình Đức</span>
-  <nav class="footer-links" aria-label="Điều hướng cuối trang" data-contact-reveal>
-   <a href="#statement">Giới thiệu</a><a href="#portfolio">Portfolio</a><a href="#contact">Liên hệ</a>
-  </nav>
-  <a class="footer-top" href="#home" data-contact-reveal>Về đầu trang <span aria-hidden="true">↑</span></a>
+<footer class="orv portfolio-footer" id="contact" lang="vi" aria-label="Thông tin và liên hệ">
+ <div class="footer-shell">
+  <div class="footer-topline" data-contact-reveal>
+   <div class="footer-identity">
+    <h2>Nguyễn Đình Đức</h2>
+    <p lang="en">Content Creator</p>
+   </div>
+   <a class="footer-action" href="https://zalo.me/0386001455" target="_blank" rel="noopener noreferrer">Nhắn Zalo <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="footer-columns">
+   <div data-contact-reveal>
+    <h3 id="footer-explore">Khám phá</h3>
+    <nav class="footer-links" aria-labelledby="footer-explore">
+     <a href="#home">Trang chủ</a>
+     <a href="#statement">Giới thiệu</a>
+     <a href="#portfolio">Portfolio</a>
+    </nav>
+   </div>
+   <div data-contact-reveal>
+    <h3>Liên hệ</h3>
+    <address class="footer-details">
+     <a href="tel:0386001455">0386001455</a>
+     <a href="mailto:nguyendinhduc6225@gmail.com">nguyendinhduc6225<wbr>@gmail.com</a>
+    </address>
+   </div>
+   <div data-contact-reveal>
+    <h3>Địa chỉ</h3>
+    <address class="footer-address">01 Phần Lăng 8, An Khê, Thanh Khê</address>
+   </div>
+  </div>
+  <div class="footer-base" data-contact-reveal>
+   <span>© 2026 Nguyễn Đình Đức</span>
+   <a class="footer-action" href="#home">Về đầu trang <span aria-hidden="true">↑</span></a>
+  </div>
  </div>
 </footer>
 <script>
@@ -458,7 +457,6 @@ a.contact-item:hover .contact-value,.footer-links a:hover{text-decoration:underl
       }
     },{threshold:.2});
     closingObserver.observe(document.getElementById('contact'));
-    closingObserver.observe(document.querySelector('.portfolio-footer'));
   }
 })();
 </script>
