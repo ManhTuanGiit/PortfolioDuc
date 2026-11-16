@@ -36,8 +36,11 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .brand-viewport::-webkit-scrollbar{display:none}
 .brand-viewport:active{cursor:grabbing}
 .brand-logos{display:flex;flex:0 0 auto;min-width:100%;justify-content:space-evenly;gap:var(--logo-gap);padding:3px calc(var(--logo-gap) / 2);list-style:none}
-.brand-logos li{display:grid;place-items:center;flex:0 0 auto;width:var(--logo-size);aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0005}
-.brand-logos img{display:block;width:63%;height:63%;object-fit:contain;pointer-events:none}
+.brand-logos li{display:grid;justify-items:center;align-content:start;gap:clamp(7px,1.3svh,12px);flex:0 0 clamp(116px,10.5vw,146px)}
+.brand-badge{display:grid;place-items:center;width:var(--logo-size);aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0005}
+.brand-badge img{display:block;width:63%;height:63%;object-fit:contain;pointer-events:none}
+.brand-label{color:#f4f1ea;font-size:clamp(10.5px,1vw,12.5px);line-height:1.2;font-weight:500;white-space:nowrap}
+strong.brand-label{font-weight:700}
 .brand-toggle{justify-self:end;margin-inline-end:clamp(14px,3vw,42px);min-height:28px;padding:3px 11px;border:1px solid #ffffff46;border-radius:100px;background:#191919;color:var(--ink);font:500 11px 'IBM Plex Mono',monospace;cursor:pointer;pointer-events:auto}
 .brand-toggle:hover{background:#303030}
 .brand-viewport:focus-visible,.brand-toggle:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
@@ -236,14 +239,14 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
   <div class="brand-strip" lang="vi">
     <div class="brand-viewport" id="brand-viewport" role="region" aria-label="Dải logo trong portfolio" tabindex="0">
       <ul class="brand-logos" aria-label="Danh sách logo">
-        <li><img src="./images/logos/duy-tan.jpg" alt="Đại học Duy Tân" draggable="false"></li>
-        <li><img src="./images/logos/seatours.jpg" alt="SeaTours.vn" draggable="false"></li>
-        <li><img src="./images/logos/la-cabana.jpg" alt="La Cabaña" draggable="false"></li>
-        <li><img src="./images/logos/em-home.jpg" alt="Êm Home" draggable="false"></li>
-        <li><img src="./images/logos/fitness.jpg" alt="Logo hình thể đen trắng" draggable="false"></li>
-        <li><img src="./images/logos/olivias-prime.png" alt="Olivia’s Prime Steakhouse" draggable="false"></li>
-        <li><img src="./images/the-lead-agency-logo.jpg" alt="The Lead Agency" draggable="false"></li>
-        <li><img src="./images/logos/oday-stay.jpg" alt="ODAY.STAY" draggable="false"></li>
+        <li><span class="brand-badge"><img src="./images/logos/duy-tan.jpg" alt="" draggable="false"></span><strong class="brand-label">DTU</strong></li>
+        <li><span class="brand-badge"><img src="./images/logos/seatours.jpg" alt="" draggable="false"></span><span class="brand-label">SeaTours Travel</span></li>
+        <li><span class="brand-badge"><img src="./images/logos/em-home.jpg" alt="" draggable="false"></span><span class="brand-label">emhome.danang</span></li>
+        <li><span class="brand-badge"><img src="./images/logos/fitness.jpg" alt="" draggable="false"></span><span class="brand-label">blacksgym.dn</span></li>
+        <li><span class="brand-badge"><img src="./images/logos/olivias-prime.png" alt="" draggable="false"></span><span class="brand-label">oliviasprimesteakhouse</span></li>
+        <li><span class="brand-badge"><img src="./images/logos/la-cabana.jpg" alt="" draggable="false"></span><span class="brand-label">lacabana.dn</span></li>
+        <li><span class="brand-badge"><img src="./images/logos/oday-stay.jpg" alt="" draggable="false"></span><span class="brand-label">odaystay</span></li>
+        <li><span class="brand-badge"><img src="./images/the-lead-agency-logo.jpg" alt="" draggable="false"></span><span class="brand-label">TheLeadAgency</span></li>
       </ul>
     </div>
     <button class="brand-toggle" type="button" aria-controls="brand-viewport" hidden>Tạm dừng</button>
