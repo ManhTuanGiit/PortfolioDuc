@@ -155,7 +155,8 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 .experience-hotel { object-position:center 48% }
 .experience-project { object-fit:contain }
 .portfolio-quote a:focus-visible { outline:2px solid currentColor; outline-offset:4px }
-.portfolio-quote { display:grid; grid-template-columns:minmax(0,.36fr) minmax(0,1fr); gap:clamp(12px,2.6vw,44px); align-items:start; margin-block:clamp(36px,6vw,108px) 0; padding:clamp(29px,6vw,110px); background:#e9e8e5; color:#111; border-radius:10px }
+.quote-band { margin-top:clamp(36px,6vw,108px); background:#e9e8e5; color:#111 }
+.portfolio-quote { display:grid; grid-template-columns:minmax(0,.36fr) minmax(0,1fr); gap:clamp(12px,2.6vw,44px); align-items:start; padding:clamp(29px,6vw,110px) }
 .portfolio-quote-mark { align-self:start; margin-top:-.07em; font-family:Georgia,serif; font-size:clamp(120px,24vw,455px); font-weight:700; line-height:.8; user-select:none }
 .portfolio-quote blockquote { margin:0 }
 .portfolio-quote blockquote p { max-width:12ch; font-size:clamp(38px,7.2vw,138px); font-weight:550; line-height:1.02; letter-spacing:-.045em; text-wrap:balance }
@@ -339,16 +340,18 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
    <img class="experience-image experience-hotel" src="./images/oday-stay-suite.jpg" alt="Khung cảnh nhìn ra sông từ phòng Suite của ODAY.STAY" loading="lazy" decoding="async" data-section-reveal>
   </article>
  </section>
- <figure class="portfolio-quote" id="quote" lang="en">
-  <span class="portfolio-quote-mark" aria-hidden="true">“</span>
-  <blockquote cite="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf" data-section-reveal>
-   <p>The medium is the message.</p>
-  </blockquote>
-  <figcaption data-section-reveal>
-   <strong>Marshall McLuhan</strong>
-   <a href="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf"><cite>Understanding Media</cite>, 1964</a>
-  </figcaption>
- </figure>
+ <div class="quote-band">
+  <figure class="portfolio-quote" id="quote" lang="en">
+   <span class="portfolio-quote-mark" aria-hidden="true">“</span>
+   <blockquote cite="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf" data-section-reveal>
+    <p>The medium is the message.</p>
+   </blockquote>
+   <figcaption data-section-reveal>
+    <strong>Marshall McLuhan</strong>
+    <a href="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf"><cite>Understanding Media</cite>, 1964</a>
+   </figcaption>
+  </figure>
+ </div>
 </section>
 </main>
 <footer class="orv portfolio-footer" id="contact" lang="vi" aria-label="Thông tin và liên hệ">
