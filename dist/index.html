@@ -30,6 +30,18 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 #cross i{position:absolute;left:50%;top:-.62em;margin-left:-.3em;font:400 13px 'IBM Plex Mono',monospace;color:var(--mid);background:var(--bg);padding:0 .3em;line-height:1.2}
 #rule{position:absolute;left:3.5vw;right:3.5vw;top:50%;height:1px;background:var(--line);transform-origin:left;transform:scaleX(0)}
 #name{position:absolute;left:0;top:0;padding:6px 11px;background:var(--ink);color:var(--bg);border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.04em;pointer-events:none;opacity:0;transition:opacity .16s;white-space:nowrap}
+/* Logo strip at the start of the video section */
+.brand-strip{--logo-size:min(20svh,clamp(80px,8.4vw,126px));--logo-gap:clamp(14px,2.4vw,38px);position:absolute;z-index:2;inset:0 0 auto;height:37.5svh;display:grid;grid-template-columns:minmax(0,1fr);align-content:center;gap:clamp(5px,1.6svh,14px);pointer-events:none}
+.brand-viewport{display:flex;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;user-select:none;pointer-events:auto}
+.brand-viewport::-webkit-scrollbar{display:none}
+.brand-viewport:active{cursor:grabbing}
+.brand-logos{display:flex;flex:0 0 auto;min-width:100%;justify-content:space-evenly;gap:var(--logo-gap);padding:3px calc(var(--logo-gap) / 2);list-style:none}
+.brand-logos li{display:grid;place-items:center;flex:0 0 auto;width:var(--logo-size);aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0005}
+.brand-logos img{display:block;width:63%;height:63%;object-fit:contain;pointer-events:none}
+.brand-toggle{justify-self:end;margin-inline-end:clamp(14px,3vw,42px);min-height:28px;padding:3px 11px;border:1px solid #ffffff46;border-radius:100px;background:#191919;color:var(--ink);font:500 11px 'IBM Plex Mono',monospace;cursor:pointer;pointer-events:auto}
+.brand-toggle:hover{background:#303030}
+.brand-viewport:focus-visible,.brand-toggle:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+@media(max-width:760px){.brand-toggle{min-height:36px}}
 </style>
 <style>
 @font-face {
@@ -221,6 +233,21 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
 </section>
 <section id="track" aria-label="Nguyễn Đình Đức video portfolio">
   <span id="portfolio" aria-hidden="true"></span>
+  <div class="brand-strip" lang="vi">
+    <div class="brand-viewport" id="brand-viewport" role="region" aria-label="Dải logo trong portfolio" tabindex="0">
+      <ul class="brand-logos" aria-label="Danh sách logo">
+        <li><img src="./images/logos/duy-tan.jpg" alt="Đại học Duy Tân" draggable="false"></li>
+        <li><img src="./images/logos/seatours.jpg" alt="SeaTours.vn" draggable="false"></li>
+        <li><img src="./images/logos/la-cabana.jpg" alt="La Cabaña" draggable="false"></li>
+        <li><img src="./images/logos/em-home.jpg" alt="Êm Home" draggable="false"></li>
+        <li><img src="./images/logos/fitness.jpg" alt="Logo hình thể đen trắng" draggable="false"></li>
+        <li><img src="./images/logos/olivias-prime.png" alt="Olivia’s Prime Steakhouse" draggable="false"></li>
+        <li><img src="./images/the-lead-agency-logo.jpg" alt="The Lead Agency" draggable="false"></li>
+        <li><img src="./images/logos/oday-stay.jpg" alt="ODAY.STAY" draggable="false"></li>
+      </ul>
+    </div>
+    <button class="brand-toggle" type="button" aria-controls="brand-viewport" hidden>Tạm dừng</button>
+  </div>
   <div class="stage" id="stage">
     <h2 id="portfolio-heading" lang="vi" aria-label="Nguyễn Đình Đức, Marketing">
       <div class="hl" id="l1" aria-hidden="true"><span>NGUYỄN ĐÌNH ĐỨC</span></div>
@@ -356,6 +383,102 @@ body{font-family:'Inter Tight',system-ui,sans-serif;color:var(--ink);background:
     },{threshold:.22});
     trustObserver.observe(trust);
   }
+})();
+</script>
+<script>
+(() => {
+  const viewport = document.getElementById('brand-viewport');
+  const logos = viewport.querySelector('.brand-logos');
+  const toggle = document.querySelector('.brand-toggle');
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = motion.matches;
+  let hovered = false;
+  let visible = false;
+  let frame = 0;
+  let lastTime = 0;
+  let offset = 0;
+  let length = 0;
+  let drag = null;
+
+  // Repeat the artwork on either side so wrapping is visually seamless.
+  const copy = logos.cloneNode(true);
+  copy.setAttribute('aria-hidden', 'true');
+  logos.before(copy);
+  logos.after(copy.cloneNode(true));
+
+  function tick(now) {
+    const elapsed = lastTime ? Math.min(now - lastTime, 40) : 0;
+    lastTime = now;
+    offset -= elapsed * 0.028;
+    if (offset < length * 0.25) offset += length;
+    viewport.scrollLeft = offset;
+    frame = requestAnimationFrame(tick);
+  }
+
+  function syncPlayback() {
+    if (paused || hovered || !visible || document.hidden || !length) {
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+      lastTime = 0;
+    } else if (!frame) {
+      offset = viewport.scrollLeft;
+      frame = requestAnimationFrame(tick);
+    }
+  }
+
+  function setPaused(value) {
+    paused = value;
+    toggle.textContent = paused ? 'Tiếp tục' : 'Tạm dừng';
+    syncPlayback();
+  }
+
+  function measure() {
+    const next = logos.getBoundingClientRect().width;
+    if (!next || next === length) return;
+    const position = length ? viewport.scrollLeft / length : 1;
+    length = next;
+    viewport.scrollLeft = position * length;
+    offset = viewport.scrollLeft;
+    syncPlayback();
+  }
+
+  toggle.hidden = false;
+  setPaused(paused);
+  toggle.addEventListener('click', () => setPaused(!paused));
+  motion.addEventListener('change', event => setPaused(event.matches));
+  document.addEventListener('visibilitychange', syncPlayback);
+  const visibility = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    syncPlayback();
+  });
+  visibility.observe(viewport);
+  new ResizeObserver(measure).observe(logos);
+  measure();
+
+  viewport.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse') { hovered = true; syncPlayback(); }
+  });
+  viewport.addEventListener('pointerleave', event => {
+    if (event.pointerType === 'mouse') { hovered = false; syncPlayback(); }
+  });
+  viewport.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    setPaused(true);
+    // Keep touch scrolling and momentum native. Track mouse drags separately.
+    if (event.pointerType !== 'mouse') return;
+    drag = { x:event.clientX, scroll:viewport.scrollLeft, pointer:event.pointerId };
+    viewport.setPointerCapture(event.pointerId);
+  });
+  viewport.addEventListener('pointermove', event => {
+    if (drag?.pointer === event.pointerId) viewport.scrollLeft = drag.scroll + drag.x - event.clientX;
+  });
+  viewport.addEventListener('lostpointercapture', () => { drag = null; });
+  viewport.addEventListener('wheel', event => {
+    if (event.deltaX || event.shiftKey) setPaused(true);
+  }, {passive:true});
+  viewport.addEventListener('keydown', event => {
+    if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) setPaused(true);
+  });
 })();
 </script>
 <script type="module">
