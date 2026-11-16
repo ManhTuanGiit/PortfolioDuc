@@ -141,27 +141,43 @@ strong.brand-label{font-weight:700}
 .orv-about-bio h2 { font-size:clamp(34px,4.15vw,68px); font-weight:500; line-height:1.1; letter-spacing:-.045em; word-spacing:.08em; text-wrap:balance }
 .orv-about-role { margin:12px 0 28px; font-size:clamp(15px,1.6vw,23px); color:#e2e2e2 }
 .orv-about-bio p:not([class]) { margin-top:15px; max-width:49ch; font-size:clamp(16px,1.48vw,21px); line-height:1.6; color:#bdbdbd }
-.orv-trust { position:relative; display:grid; grid-template-columns:1.55fr 1fr 1.02fr .59fr; align-items:center; gap:calc(17 * var(--u)); width:min(90.42%,1736px); min-height:calc(429 * var(--u)); margin:auto; padding:calc(49 * var(--u)); padding-right:0; overflow:hidden; border:1px solid #ffffff47; border-radius:calc(14 * var(--u)) }
-.orv-trust-copy { position:relative; align-self:center; padding-right:calc(16 * var(--u)) }
-.orv-trust h2 { font-size:calc(55 * var(--u)); line-height:1; letter-spacing:-.055em; font-weight:500 }
-.orv-trust-copy p { max-width:calc(295 * var(--u)); margin-top:calc(22 * var(--u)); font-size:max(10px,calc(14.5 * var(--u))); line-height:1.3; color:#bbb }
-.orv-tile { position:absolute; display:grid; place-items:center; width:calc(88 * var(--u)); aspect-ratio:1; border-radius:calc(12 * var(--u)); color:#fff; background:#ffffff19; backdrop-filter:blur(12px); font-size:calc(28 * var(--u)); pointer-events:none }
-.orv-tile:first-of-type { top:calc(-14 * var(--u)); left:calc(268 * var(--u)) }
-.orv-tile:nth-of-type(2) { top:calc(160 * var(--u)); left:calc(63 * var(--u)) }
-.orv-card { align-self:center; position:relative; display:flex; flex-direction:column; justify-content:space-between; height:calc(326 * var(--u)); min-width:0; padding:calc(20 * var(--u)); border-radius:calc(8 * var(--u)); transition:translate .22s; overflow:hidden; font-size:max(9px,calc(13 * var(--u))); line-height:1.25 }
-.orv-card:hover { translate:0 calc(-6 * var(--u)) }
-.orv-card strong { display:block; font-size:calc(43 * var(--u)); font-weight:550; line-height:1; letter-spacing:-.05em }
-.orv-collab { background:#d6d6d6; color:#111 }
-.orv-avatars { display:grid; grid-template-columns:repeat(4,1fr); gap:calc(7 * var(--u)); max-width:calc(228 * var(--u)) }
-.orv-avatars img { display:block; width:100%; max-width:calc(48 * var(--u)); aspect-ratio:1; object-fit:cover; border-radius:50%; filter:grayscale(1) }
-.orv-collab > div:last-child { display:flex; justify-content:space-between; align-items:end; gap:5px }
-.orv-collab > div:last-child span { text-align:right }
-.orv-awards { background:#262626 }
-.orv-awards > div { display:flex; justify-content:space-between; gap:3px }
-.orv-awards svg { width:calc(126 * var(--u)); max-width:48%; height:auto; align-self:start }
-.orv-portrait { padding:0; min-width:calc(200 * var(--u)); background:#313940 }
-.orv-portrait img { width:100%; height:100%; object-fit:cover; object-position:51% center }
-.orv-concept { width:min(90.42%,1736px); margin:calc(19 * var(--u)) auto 0; color:#999; font-size:max(10px,calc(12 * var(--u))); }
+.experience, .portfolio-quote { width:min(90.42%,1736px); margin-inline:auto }
+.experience { padding-block:clamp(46px,6vw,110px) 0 }
+.experience > h2 { margin-bottom:clamp(22px,3.4vw,58px); font-size:clamp(38px,6vw,100px); font-weight:500; line-height:1.04; letter-spacing:-.055em }
+.experience-row { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.55fr) minmax(0,.7fr); align-items:start; gap:clamp(14px,2.3vw,36px); padding-block:clamp(22px,3vw,50px); border-top:1px solid #333 }
+.experience-copy { padding-top:3px }
+.experience-role { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; margin-bottom:14px; color:#acacac; font-size:13px; line-height:1.4 }
+.experience-role span + span::before { content:'·'; margin-right:12px }
+.experience-copy h3 { font-size:clamp(26px,3.35vw,58px); font-weight:500; line-height:1.04; letter-spacing:-.05em }
+.experience-copy > p:last-child { max-width:34ch; margin-top:15px; color:#bfbfbf; font-size:clamp(14px,1.17vw,20px); line-height:1.55 }
+.experience-media { min-width:0; margin:0 }
+.experience-image { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:9px; background:#202020 }
+.experience-team { object-position:center 66% }
+.experience-hotel { object-position:center 48% }
+.experience-media figcaption { margin:9px 0 0; color:#adadad; font-size:clamp(12px,1vw,16px); line-height:1.4 }
+.experience-brands { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; border:1px solid #333; overflow:hidden }
+.experience-brands img { width:100%; height:100%; min-height:0; object-fit:contain; background:#e4e7e7 }
+.experience-brands img:last-child { background:#000 }
+.experience-link { display:flex; flex-direction:column; min-width:0; border:1px solid #333; border-radius:9px; background:#151515; color:inherit; text-decoration:none; overflow:hidden; transition:border-color .2s,background-color .2s }
+.experience-link:hover { border-color:#777; background:#222 }
+.experience-link:focus-visible,.portfolio-quote a:focus-visible { outline:2px solid currentColor; outline-offset:4px }
+.experience-thumb { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; background:#212121 }
+.experience-thumb--agency { object-fit:contain; padding:8%; background:#fff }
+.experience-link-label { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:clamp(11px,1.2vw,19px); font-size:clamp(13px,1.12vw,17px); line-height:1.3 }
+.experience-link-label strong { font-weight:550; overflow-wrap:anywhere }
+.experience-link-label small { display:block; margin-top:4px; color:#bcbcbc; font-size:.84em }
+.experience-link-label > span:last-child { flex:none; font-size:19px }
+.experience-support { display:grid; gap:12px; padding:clamp(14px,1.65vw,26px); border-radius:9px; background:#181818; font-size:clamp(13px,1.05vw,18px); line-height:1.35 }
+.experience-support h4 { color:#bcbcbc; font-size:inherit; font-weight:400 }
+.experience-support ul { display:grid; gap:9px; list-style:none }
+.experience-support li + li { border-top:1px solid #3a3a3a; padding-top:9px }
+.portfolio-quote { display:grid; grid-template-columns:minmax(0,.36fr) minmax(0,1fr); gap:clamp(12px,2.6vw,44px); align-items:start; margin-block:clamp(36px,6vw,108px) 0; padding:clamp(29px,6vw,110px); background:#e9e8e5; color:#111; border-radius:10px }
+.portfolio-quote-mark { align-self:start; margin-top:-.07em; font-family:Georgia,serif; font-size:clamp(120px,24vw,455px); font-weight:700; line-height:.8; user-select:none }
+.portfolio-quote blockquote { margin:0 }
+.portfolio-quote blockquote p { max-width:12ch; font-size:clamp(38px,7.2vw,138px); font-weight:550; line-height:1.02; letter-spacing:-.045em; text-wrap:balance }
+.portfolio-quote figcaption { grid-column:2; display:grid; gap:5px; border-top:1px solid #bbb9b5; padding-top:clamp(12px,1.6vw,24px); line-height:1.35 }
+.portfolio-quote figcaption strong { font-size:clamp(16px,1.6vw,26px); font-weight:550 }
+.portfolio-quote figcaption a { width:fit-content; color:#4a4a4a; font-size:clamp(13px,1.13vw,18px); text-underline-offset:3px }
 @media(max-width:760px) {
  .orv{--u:clamp(.76px,calc(100vw / 390),1.3px);--edge:calc(19 * var(--u))}
  .orv-hero{height:auto}
@@ -182,17 +198,15 @@ strong.brand-label{font-weight:700}
  .orv-about-me{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:34px 64px}
  .orv-about-photo{width:min(100%,360px);justify-self:center}
  .orv-about-role{margin-bottom:20px}
- .orv-trust{grid-template-columns:minmax(0,1fr);gap:calc(10 * var(--u));padding:calc(18 * var(--u));width:calc(100% - 2 * var(--edge));overflow:visible}
- .orv-trust-copy{grid-column:1/-1;padding-bottom:calc(15 * var(--u))}
- .orv-trust h2{font-size:calc(42 * var(--u))}
- .orv-tile:first-of-type{left:auto;right:0;top:0}
- .orv-tile:nth-of-type(2){display:none}
- .orv-card{height:calc(169 * var(--u));padding:calc(12 * var(--u))}
- .orv-card strong{font-size:calc(29 * var(--u))}
- .orv-collab > div:last-child{flex-wrap:nowrap}
- .orv-collab > div:last-child span{text-align:right}
- .orv-portrait{grid-column:1/-1;min-width:0;height:calc(230 * var(--u));padding:0}
- .orv-portrait img{object-position:center 36%}
+ .experience,.portfolio-quote{width:calc(100% - 2 * var(--edge))}
+ .experience-row{grid-template-columns:minmax(0,1fr);gap:15px}
+ .experience-copy > p:last-child{margin-top:10px;max-width:42ch}
+ .experience-role{margin-bottom:9px}
+ .experience-link{display:grid;grid-template-columns:clamp(75px,24%,125px) minmax(0,1fr)}
+ .experience-thumb{height:100%;min-height:68px;aspect-ratio:unset}
+ .portfolio-quote{grid-template-columns:minmax(0,1fr);gap:16px}
+ .portfolio-quote-mark{height:.41em;font-size:130px;margin-top:-.08em}
+ .portfolio-quote figcaption{grid-column:1;margin-top:7px}
 }
 @media(prefers-reduced-motion:reduce){ .orv *, .orv *:before{animation:none!important;transition:none!important} }
 </style>
@@ -289,7 +303,7 @@ strong.brand-label{font-weight:700}
     <div id="name"></div>
   </div>
 </section>
-<section class="orv orv-end" aria-label="Orvante studio">
+<section class="orv orv-end" aria-label="Giới thiệu và kinh nghiệm">
  <div class="orv-bar"><span>EST <b>2019</b></span><a href="#statement">SCROLL DOWN <i aria-hidden="true">↓</i></a><span>LIVE IN DETAILS</span></div>
  <section class="orv-about-me" id="statement" aria-labelledby="about-me-name" lang="vi">
   <figure class="orv-about-photo">
@@ -303,25 +317,79 @@ strong.brand-label{font-weight:700}
    <p>Trong thời gian thực tập tại The Lead Agency và ByKod Project, tôi tham gia lên kế hoạch nội dung, quay dựng video và hỗ trợ triển khai truyền thông cho các thương hiệu.</p>
   </div>
  </section>
- <section class="orv-trust" id="highlights" aria-labelledby="orv-trust-title">
-  <div class="orv-trust-copy"><h2 id="orv-trust-title">Trusted by<br>Hundreds of<br>Growing<br>Businesses</h2><span class="orv-tile" aria-hidden="true">✳</span><span class="orv-tile" aria-hidden="true">⠿</span><p>From early-stage teams to growing brands, we build identities and campaigns with a clear point of view.</p></div>
-  <article class="orv-card orv-collab"><div class="orv-avatars" aria-hidden="true"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/300f41b1-3de5-4153-afde-06e15e753ad0.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/bfff4cdf-4fda-4491-ada6-62f3b6236492.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/943b121e-fe72-479f-93ae-aa8cd1650f69.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/c673306f-2b81-4c3d-a7d2-3df61d481abb.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/2e4fcf11-d0fc-4f31-8f7a-dfe751777141.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/ab458fcd-4c2c-426f-8213-21cc3c7274be.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/c1fcd833-5ac9-41e9-9352-fead7e64fa24.webp" alt="" loading="lazy" width="48" height="48"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4c2b3307-e555-4633-949c-efd3b7e09d82.webp" alt="" loading="lazy" width="48" height="48"></div><div><strong data-count="56" data-suffix="M+">56M+</strong><span>Global<br>Collaborations</span></div></article>
-  <article class="orv-card orv-awards"><div><p><strong data-count="10">10+</strong>Industry Awards</p><svg viewBox="0 0 132 78" role="img" aria-label="Best Growth Partner 2026"><g fill="none" stroke="#ddd" stroke-width="1.25"><path d="M24 66Q-2 48 16 14M108 66q26-18 8-52M24 66Q9 65 9 55q12 1 15 11M15 55Q3 53 4 44q9 1 11 11M11 43Q1 36 6 29q7 4 5 14M11 31Q3 21 11 17q5 6 0 14M108 66q15-1 15-11-12 1-15 11m9-11q12-2 11-11-9 1-11 11m4-12q10-7 5-14-7 4-5 14m0-12q8-10 0-14-5 6 0 14"/></g><text fill="#fff" x="66" y="33" text-anchor="middle" font-size="8">BEST GROWTH</text><text fill="#fff" x="66" y="45" text-anchor="middle" font-size="8">PARTNER</text><text fill="#bbb" x="66" y="58" text-anchor="middle" font-size="8">2026</text></svg></div><p>In recognition of thoughtful strategy and creative execution.</p></article>
-  <figure class="orv-card orv-portrait"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/addecc7d-666f-4342-8290-ed7f7cbbffd6.webp" alt="Side profile in a white shirt" loading="lazy"></figure>
+ <section class="experience" id="highlights" aria-labelledby="experience-title" lang="vi">
+  <h2 id="experience-title">Kinh nghiệm &amp; dự án</h2>
+  <article class="experience-row" aria-labelledby="experience-the-lead">
+   <div class="experience-copy" data-section-reveal>
+    <p class="experience-role"><span lang="en">Content Creator Intern</span><span>3 tháng</span></p>
+    <h3 id="experience-the-lead">The Lead Agency</h3>
+    <p>Tôi tham gia lên kế hoạch nội dung, quay và chỉnh sửa video cho các kênh truyền thông của agency.</p>
+   </div>
+   <figure class="experience-media" data-section-reveal>
+    <img class="experience-image experience-team" src="./images/the-lead-team.jpg" alt="Ảnh tập thể The Lead Agency dịp Trung thu" loading="lazy" decoding="async">
+    <figcaption>Đội ngũ The Lead Agency</figcaption>
+   </figure>
+   <a class="experience-link" href="https://www.tiktok.com/@thelead.office" target="_blank" rel="noopener noreferrer" data-section-reveal>
+    <img class="experience-thumb experience-thumb--agency" src="./images/the-lead-agency-logo.jpg" alt="" loading="lazy" decoding="async">
+    <span class="experience-link-label"><span><strong>Chuyện Nhà The Lead</strong><small>Xem kênh TikTok</small></span><span aria-hidden="true">↗</span></span>
+   </a>
+  </article>
+  <article class="experience-row" aria-labelledby="experience-bykod">
+   <div class="experience-copy" data-section-reveal>
+    <p class="experience-role"><span lang="en">Marketing Intern</span><span>3 tháng</span></p>
+    <h3 id="experience-bykod">ByKod Project</h3>
+    <p>Tôi hỗ trợ triển khai hoạt động marketing và sản xuất nội dung cho các thương hiệu.</p>
+   </div>
+   <figure class="experience-media" data-section-reveal>
+    <div class="experience-image experience-brands">
+     <img src="./images/logos/la-cabana.jpg" alt="La Cabaña" loading="lazy" decoding="async">
+     <img src="./images/logos/olivias-prime.png" alt="Olivia’s Prime Steakhouse" loading="lazy" decoding="async">
+    </div>
+    <figcaption>Thương hiệu trong kỳ thực tập</figcaption>
+   </figure>
+   <div class="experience-support" data-section-reveal>
+    <h4>Thương hiệu &amp; dự án</h4>
+    <ul><li>La Cabaña</li><li>Olivia’s Prime Steakhouse</li><li>An Nga</li><li>SeaTours Travel</li></ul>
+   </div>
+  </article>
+  <article class="experience-row" aria-labelledby="experience-oday">
+   <div class="experience-copy" data-section-reveal>
+    <p class="experience-role"><span>Dự án TikTok</span></p>
+    <h3 id="experience-oday">ODAY.STAY</h3>
+    <p>Tôi tham gia sản xuất video ngắn kể lại những tình huống thường ngày tại khách sạn.</p>
+   </div>
+   <figure class="experience-media" data-section-reveal>
+    <img class="experience-image experience-hotel" src="./images/oday-stay-suite.jpg" alt="Khung cảnh nhìn ra sông từ phòng Suite của ODAY.STAY" loading="lazy" decoding="async">
+    <figcaption>Không gian tại ODAY.STAY</figcaption>
+   </figure>
+   <a class="experience-link" href="https://www.tiktok.com/@odau.oday" target="_blank" rel="noopener noreferrer" data-section-reveal>
+    <img class="experience-thumb" src="./images/oday-stay-tiktok.jpg" alt="" loading="lazy" decoding="async">
+    <span class="experience-link-label"><span><strong>Ở đâu em của Ở đây</strong><small>Xem kênh TikTok</small></span><span aria-hidden="true">↗</span></span>
+   </a>
+  </article>
  </section>
- <p class="orv-concept">Orvante is a fictional studio concept.</p>
+ <figure class="portfolio-quote" id="quote" lang="en">
+  <span class="portfolio-quote-mark" aria-hidden="true">“</span>
+  <blockquote cite="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf" data-section-reveal>
+   <p>The medium is the message.</p>
+  </blockquote>
+  <figcaption data-section-reveal>
+   <strong>Marshall McLuhan</strong>
+   <a href="https://web.mit.edu/allanmc/www/mcluhan.mediummessage.pdf"><cite>Understanding Media</cite>, 1964</a>
+  </figcaption>
+ </figure>
 </section>
 </main>
 <footer class="orv portfolio-footer" id="contact" lang="vi" aria-label="Thông tin và liên hệ">
  <div class="footer-shell">
-  <div class="footer-topline" data-contact-reveal>
+  <div class="footer-topline" data-section-reveal>
    <div class="footer-identity">
     <h2>Nguyễn Đình Đức</h2>
     <p lang="en">Content Creator</p>
    </div>
   </div>
   <div class="footer-columns">
-   <div data-contact-reveal>
+   <div data-section-reveal>
     <h3 id="footer-explore">Khám phá</h3>
     <nav class="footer-links" aria-labelledby="footer-explore">
      <a class="footer-item" href="#home"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Trang chủ</span></a>
@@ -329,7 +397,7 @@ strong.brand-label{font-weight:700}
      <a class="footer-item" href="#portfolio"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M3 13h18m-11 0v2h4v-2"/></svg><span>Portfolio</span></a>
     </nav>
    </div>
-   <div data-contact-reveal>
+   <div data-section-reveal>
     <h3>Liên hệ</h3>
     <address class="footer-details">
      <a class="footer-item" href="tel:0386001455"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.5v3a2 2 0 0 1-2.2 2 19 19 0 0 1-8.3-3 18 18 0 0 1-5.5-5.5 19 19 0 0 1-3-8.3A2 2 0 0 1 5 2.5h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L9 10.4a14 14 0 0 0 5.6 5.6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.4 1.9.6 2.8.7a2 2 0 0 1 1.2 1.5Z"/></svg><span>0386001455</span></a>
@@ -337,12 +405,12 @@ strong.brand-label{font-weight:700}
      <a class="footer-item" href="https://zalo.me/0386001455" target="_blank" rel="noopener noreferrer"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15a3 3 0 0 1-3 3H9l-5 3v-5a3 3 0 0 1-1-2V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z"/><path d="M8 8h7m-7 4h5"/></svg><span>Nhắn Zalo</span></a>
     </address>
    </div>
-   <div data-contact-reveal>
+   <div data-section-reveal>
     <h3>Địa chỉ</h3>
     <address class="footer-address footer-item"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>01 Phần Lăng 8, An Khê, Thanh Khê</span></address>
    </div>
   </div>
-  <div class="footer-base" data-contact-reveal>
+  <div class="footer-base" data-section-reveal>
    <span>© 2026 Nguyễn Đình Đức</span>
    <a class="footer-top" href="#home" aria-label="Về đầu trang"><svg class="footer-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-5 5 5-5 5 5"/></svg></a>
   </div>
@@ -355,8 +423,6 @@ strong.brand-label{font-weight:700}
   const navLinks = [...nav.querySelectorAll('a')];
   const pill = nav.querySelector('i');
   const photo = hero.querySelector('.orv-photo img');
-  const trust = document.querySelector('.orv-trust');
-  const avatars = [...trust.querySelectorAll('.orv-avatars img')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const recorder = new URLSearchParams(location.search).get('rec') === '1';
   const limit = value => Math.max(0, Math.min(1, value));
@@ -394,25 +460,6 @@ strong.brand-label{font-weight:700}
   if (reduced) return;
 
   const easing = 'cubic-bezier(.2,.75,.25,1)';
-  function animateCount(element, duration = 1400) {
-    const value = Number(element.dataset.count);
-    const suffix = element.dataset.suffix || '+';
-    let started;
-    function tick(now) {
-      started ??= now;
-      const progress = limit((now - started) / duration);
-      element.textContent = Math.round(value * (1 - (1 - progress) ** 3)) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  function showTrust() {
-    trust.querySelectorAll('[data-count]').forEach(element => animateCount(element, 1250));
-    avatars.forEach((image, index) => {
-      image.animate([{scale:.4,opacity:0},{scale:1,opacity:1}], {duration:380,delay:index*63,easing,fill:'backwards'});
-    });
-  }
-
   hero.querySelectorAll('.orv-title b').forEach((line, index) => {
     line.animate([{transform:'translateY(110%)'},{transform:'translateY(0)'}],
       {duration:1000,delay:index*110,easing,fill:'backwards'});
@@ -434,22 +481,13 @@ strong.brand-label{font-weight:700}
       if (elapsed < 5500) requestAnimationFrame(record);
     }
     requestAnimationFrame(record);
-    setTimeout(showTrust, 3500);
-    setTimeout(() => trust.querySelector('.orv-awards').animate([{translate:'0 0'},{translate:'0 -6px'}],
-      {duration:300,easing,fill:'forwards'}), 5300);
   } else {
     addEventListener('scroll', queueUpdate, {passive:true});
     update();
-    const trustObserver = new IntersectionObserver(entries => {
-      if (!entries.some(entry => entry.isIntersecting)) return;
-      showTrust();
-      trustObserver.disconnect();
-    },{threshold:.22});
-    trustObserver.observe(trust);
     const closingObserver = new IntersectionObserver((entries, observer) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        entry.target.querySelectorAll('[data-contact-reveal]').forEach((element, index) => {
+        entry.target.querySelectorAll('[data-section-reveal]').forEach((element, index) => {
           element.animate(
             [{opacity:.25,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],
             {duration:650,delay:index*65,easing,fill:'backwards'}
@@ -458,7 +496,8 @@ strong.brand-label{font-weight:700}
         observer.unobserve(entry.target);
       }
     },{threshold:.2});
-    closingObserver.observe(document.getElementById('contact'));
+    document.querySelectorAll('.experience-row, .portfolio-quote, #contact')
+      .forEach(section => closingObserver.observe(section));
   }
 })();
 </script>
